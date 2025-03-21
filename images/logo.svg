@@ -1,0 +1,19 @@
+<svg width="480" height="70" viewBox="0 0 480 70" xmlns="http://www.w3.org/2000/svg">
+  <!-- Текст логотипа -->
+  <g>
+    <!-- АКВА-БУР58 с тенью и градиентом -->
+    <defs>
+      <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e6e6e6;stop-opacity:1" />
+      </linearGradient>
+      <filter id="shadow">
+        <feDropShadow dx="2" dy="2" stdDeviation="1" flood-color="#000000" flood-opacity="0.3"/>
+      </filter>
+    </defs>
+    <text x="100" y="45" font-family="Ubuntu, Arial, sans-serif" font-weight="700" font-size="45" fill="url(#textGradient)" filter="url(#shadow)" letter-spacing="1">АКВА-БУР58</text>
+    
+    <!-- Подпись с тенью -->
+    <text x="100" y="65" font-family="Ubuntu, Arial, sans-serif" font-weight="500" font-size="18" fill="#ffffff" filter="url(#shadow)" letter-spacing="0.5">бурение и обустройство скважин на воду</text>
+  </g>
+</svg>

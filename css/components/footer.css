@@ -1,0 +1,407 @@
+/* Стили для футера */
+
+.footer {
+    position: relative;
+    background: linear-gradient(to right, #0072b4d7, #003c5c);
+    overflow: hidden;
+    color: #fff;
+}
+
+
+/* Верхняя часть футера */
+
+.footer-top {
+    padding: 70px 0 50px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Информационный блок */
+
+.footer-info {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    margin-left: -115px;
+}
+
+.footer-logo img {
+    height: 90px;
+    filter: brightness(0) invert(1) brightness(0.9);
+    max-width: 100%;
+    margin-top: -15px;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.footer-contacts {
+    margin-top: 25px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-contact-item i {
+    margin-right: 12px;
+    width: 20px;
+    color: #00a2ff;
+    font-size: 1rem;
+}
+
+.footer-contact-item a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-contact-item a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* Заголовки в футере */
+
+.footer-title {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #00a2ff, #00ccff);
+    border-radius: 3px;
+}
+
+
+/* Навигационное меню */
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 12px;
+}
+
+.footer-menu a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-menu a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #fff;
+    padding-left: 20px;
+}
+
+.footer-menu a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Блок с подпиской и соцсетями */
+
+.footer-connect {
+    margin-bottom: 30px;
+}
+
+.connect-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* Соцсети */
+
+.footer-social-networks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-network::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.social-network:hover {
+    transform: translateY(-5px);
+}
+
+.social-network:hover::before {
+    transform: scale(2.5);
+    opacity: 0;
+}
+
+.social-network[title="ВКонтакте"]:hover {
+    background: #4C75A3;
+}
+
+.social-network[title="Instagram"]:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-network[title="YouTube"]:hover {
+    background: #FF0000;
+}
+
+.social-network[title="Telegram"]:hover {
+    background: #0088cc;
+}
+
+.social-network[title="WhatsApp"]:hover {
+    background: #25D366;
+}
+
+
+/* Форма подписки */
+
+.footer-newsletter h5 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.newsletter-form .input-group {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.newsletter-form .form-control {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    height: auto;
+    border-radius: 50px;
+}
+
+.newsletter-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form .form-control:focus {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.newsletter-form .btn {
+    background: linear-gradient(45deg, #00a2ff, #00ccff);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.newsletter-form .btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #0095eb, #00c3ff);
+}
+
+
+/* Нижняя часть футера */
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-policy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-policy a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-policy a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* Эффект воды в футере */
+
+.footer-water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    opacity: 0.05;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.water-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    animation: wave 15s linear infinite;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-31.8z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    background-size: 800px 88.7px;
+}
+
+.water-wave:nth-child(2) {
+    animation: wave2 10s linear infinite;
+    opacity: 0.7;
+}
+
+.water-wave:nth-child(3) {
+    animation: wave3 20s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        transform: translateX(-25%) scaleY(1.1);
+    }
+    100% {
+        transform: translateX(-75%) scaleY(1.1);
+    }
+}
+
+@keyframes wave3 {
+    0% {
+        transform: translateX(-10%) scaleY(0.8);
+    }
+    100% {
+        transform: translateX(-60%) scaleY(0.8);
+    }
+}
+
+
+/* Адаптивные стили */
+
+@media (max-width: 991px) {
+    .footer-top {
+        padding: 50px 0 30px;
+    }
+    .footer-title {
+        margin-top: 20px;
+    }
+    .footer-policy {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-top {
+        padding: 40px 0 20px;
+    }
+    .footer-title {
+        font-size: 1.2rem;
+    }
+    .footer-water {
+        height: 100px;
+    }
+    .footer-policy {
+        justify-content: center;
+        gap: 15px;
+    }
+    .copyright {
+        text-align: center;
+    }
+    .footer-contact-item {
+        font-size: 0.9rem;
+    }
+}

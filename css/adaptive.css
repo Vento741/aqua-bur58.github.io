@@ -1,0 +1,621 @@
+/* Адаптивные стили для сайта */
+
+
+/* Extra large screens (desktop, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1340px;
+    }
+    .hero__title {
+        font-size: 6rem;
+    }
+    .hero__subtitle {
+        font-size: 1.9rem;
+    }
+    .about-text {
+        padding-right: 30px;
+    }
+}
+
+
+/* Large screens (desktop, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    .hero__title {
+        font-size: 3.2rem;
+    }
+    .hero__subtitle {
+        font-size: 1.6rem;
+    }
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+    .hero {
+        padding: 160px 0 130px;
+    }
+    .about-subtitle {
+        font-size: 1.6rem;
+    }
+    .advantage-content h4 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Medium screens (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    .hero {
+        padding: 120px 0 80px;
+        min-height: auto;
+    }
+    .hero__title {
+        font-size: 2.8rem;
+    }
+    .hero__subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+        max-width: 95%;
+    }
+    .section-heading h2 {
+        font-size: 2.2rem;
+    }
+    .section-heading p {
+        font-size: 1.1rem;
+    }
+    section {
+        padding: 70px 0;
+    }
+    .wave-divider .wave {
+        height: 60px;
+    }
+    .hero__cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .hero__messengers {
+        margin-top: 0;
+    }
+    .hero__image {
+        margin-top: 40px;
+        transform: perspective(1000px) rotateY(0);
+    }
+    .about-image {
+        margin-bottom: 50px;
+    }
+    .about-subtitle {
+        font-size: 1.6rem;
+    }
+    .about-text {
+        font-size: 1rem;
+    }
+    .experience-badge {
+        bottom: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    .experience-years {
+        font-size: 2rem;
+    }
+    .experience-text {
+        font-size: 0.8rem;
+    }
+    .btn-lg {
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+}
+
+
+/* Small screens (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    .hero {
+        padding: 120px 0 90px;
+        min-height: auto;
+    }
+    .hero__title {
+        font-size: 2.4rem;
+    }
+    .hero__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        max-width: 95%;
+    }
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+    .section-heading p {
+        font-size: 1rem;
+    }
+    section {
+        padding: 60px 0;
+    }
+    .wave-divider .wave {
+        height: 50px;
+    }
+    .hero__cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .hero__messengers {
+        margin-top: 0;
+    }
+    .hero__image {
+        margin-top: 30px;
+        transform: perspective(1000px) rotateY(0);
+    }
+    .btn-lg {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+    .about-image {
+        margin-bottom: 40px;
+    }
+    .experience-badge {
+        bottom: 15px;
+        right: 15px;
+        width: 90px;
+        height: 90px;
+    }
+    .experience-years {
+        font-size: 1.8rem;
+    }
+    .experience-text {
+        font-size: 0.7rem;
+    }
+    .about-subtitle {
+        font-size: 1.5rem;
+        text-align: center;
+        display: block;
+    }
+    .about-text {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+    .advantages {
+        gap: 20px;
+    }
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .advantage-content h4 {
+        font-size: 1.1rem;
+    }
+    .advantage-content p {
+        font-size: 0.9rem;
+    }
+    /* Адаптация номера телефона для мобильных */
+    .header__contacts {
+        margin-right: 5px;
+    }
+    .header .phone-number {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.3px;
+    }
+    .header .phone-number i {
+        font-size: 0.8rem !important;
+        color: #ffffff !important;
+    }
+}
+
+
+/* Extra small screens (phones, less than 576px) */
+
+@media (max-width: 575px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .hero {
+        padding: 100px 0 70px;
+        min-height: auto;
+    }
+    .hero__title {
+        font-size: 1.9rem;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+    .section-heading p {
+        font-size: 0.95rem;
+    }
+    .section-heading h2::after {
+        width: 60px;
+        height: 2px;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .wave-divider .wave {
+        height: 40px;
+    }
+    .hero__cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .hero__messengers {
+        margin-top: 0;
+    }
+    .hero__messenger-link {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .hero__image {
+        margin-top: 25px;
+        transform: none;
+    }
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    .btn-lg {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+    .call-btn-fixed {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+    .about-image {
+        margin-bottom: 40px;
+    }
+    .experience-badge {
+        bottom: 10px;
+        right: 10px;
+        width: 80px;
+        height: 80px;
+    }
+    .experience-years {
+        font-size: 1.6rem;
+    }
+    .experience-text {
+        font-size: 0.65rem;
+    }
+    .about-subtitle {
+        font-size: 1.4rem;
+        text-align: center;
+        display: block;
+    }
+    .about-text {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .advantages {
+        gap: 20px;
+    }
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .advantage-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    .advantage-content h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .advantage-content p {
+        font-size: 0.85rem;
+    }
+    .scroll-down {
+        bottom: 15px;
+        font-size: 24px;
+    }
+    .hero__features .hero-feature {
+        font-size: 0.8rem;
+    }
+    .hero__features i {
+        font-size: 1rem;
+    }
+}
+
+
+/* Очень маленькие экраны (320px-374px) */
+
+@media (max-width: 374px) {
+    .hero {
+        padding: 100px 0 70px;
+    }
+    .hero__title {
+        font-size: 1.7rem;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    .hero__messenger-link {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+    .btn-lg {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+    section {
+        padding: 40px 0;
+    }
+    .about-subtitle {
+        font-size: 1.3rem;
+    }
+    .experience-badge {
+        width: 70px;
+        height: 70px;
+    }
+    .experience-years {
+        font-size: 1.4rem;
+    }
+    .experience-text {
+        font-size: 0.6rem;
+    }
+}
+
+
+/* Адаптация для высоких устройств (высокие мобильные телефоны) */
+
+@media (max-height: 700px) and (max-width: 575px) {
+    .hero {
+        padding: 90px 0 60px;
+    }
+    .hero__title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    .hero__cta {
+        margin-bottom: 15px;
+    }
+    .scroll-down {
+        bottom: 10px;
+    }
+}
+
+
+/* Адаптация для устройств с поддержкой темной темы */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --dark-blue: #0095eb;
+        --black: #e1e1e1;
+        --gray: #aaaaaa;
+        --light-gray: #1a1a1a;
+        --white: #1a1a1a;
+        --light-blue: #121824;
+        --mid-blue: #192236;
+    }
+    .wave-divider .wave path {
+        fill: var(--light-blue);
+    }
+    .hero__messenger-link {
+        background-color: var(--light-gray);
+    }
+    .advantage-icon {
+        background-color: var(--mid-blue);
+    }
+    .experience-badge {
+        background-color: var(--secondary-color);
+    }
+    .bubble {
+        background: rgba(33, 150, 243, 0.05);
+        box-shadow: inset 0 0 10px rgba(3, 169, 244, 0.5);
+    }
+}
+
+
+/* Адаптация под печать */
+
+@media print {
+    .wave-divider,
+    .preloader,
+    .call-btn-fixed,
+    .hero__messengers,
+    .scroll-down,
+    .hero__bubbles {
+        display: none !important;
+    }
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background-color: #fff;
+    }
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    section {
+        page-break-inside: avoid;
+        padding: 15px 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        color: #000;
+    }
+    img {
+        page-break-inside: avoid;
+        max-width: 100% !important;
+    }
+    .btn {
+        display: none;
+    }
+    .hero {
+        padding: 20px 0;
+        min-height: auto;
+    }
+    .about-image {
+        border: 1px solid #ddd;
+    }
+    .advantage-icon {
+        border: 1px solid #000;
+        color: #000;
+    }
+}
+
+
+/* Адаптивные стили для мобильных устройств */
+
+@media (max-width: 767px) {
+    .header {
+        padding: 10px 15px;
+    }
+    /* Адаптация номера телефона для мобильных */
+    .header__contacts {
+        margin-right: 5px;
+    }
+    .header .phone-number {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+    }
+    .header .phone-number i {
+        font-size: 0.8rem;
+    }
+    /* Адаптация пузырьков для мобильных */
+    .bubble {
+        opacity: 0.3;
+    }
+    .bubble-5,
+    .bubble-6 {
+        display: none;
+    }
+    /* Адаптация буйков-ссылок для мобильной версии */
+    .header .nav-link.buoy-link {
+        margin-bottom: 8px;
+        text-align: center;
+    }
+}
+
+
+/* Очень маленькие экраны */
+
+@media (max-width: 480px) {
+    .header .navbar-collapse {
+        padding: 10px;
+    }
+    /* Показываем меньше пузырьков */
+    .bubble-3,
+    .bubble-4 {
+        display: none;
+    }
+    .header .nav-link.buoy-link {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+
+/* Белый цвет для цифр телефона в мобильной версии */
+
+.header .phone-digits {
+    color: #ffffff !important;
+}
+
+
+/* Стили для анимированных буйков в мобильной версии */
+
+@media (max-width: 767px) {
+    .header .buoy-link {
+        animation-duration: 2s;
+    }
+    /* Ускоряем анимацию пузырьков */
+    .bubble {
+        animation-duration: 5s !important;
+    }
+}
+
+
+/* Очень маленькие экраны */
+
+@media (max-width: 320px) {
+    .container {
+        padding: 0 8px;
+    }
+    /* Адаптация шапки */
+    .header .navbar-collapse {
+        padding: 6px;
+    }
+    /* Показываем минимум пузырьков */
+    .bubble-1,
+    .bubble-2 {
+        opacity: 0.2;
+    }
+    .bubble-3,
+    .bubble-4,
+    .bubble-5,
+    .bubble-6 {
+        display: none;
+    }
+    /* Уменьшаем размер ссылок в меню */
+    .header .nav-link.buoy-link {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    /* Оптимизация кнопки звонка */
+    .header .phone-number {
+        padding: 3px 6px;
+        font-size: 0.8rem;
+    }
+    .header .phone-number i {
+        font-size: 0.85rem;
+    }
+    /* Оптимизация бургер-меню */
+    .header .navbar-toggler {
+        padding: 3px 5px;
+        font-size: 0.9rem;
+    }
+    /* Добавлено: Уменьшаем размер шрифта для заголовка */
+    .header .hero__title {
+        font-size: 1.5rem;
+    }
+}

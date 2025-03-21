@@ -1,0 +1,559 @@
+/**
+ * Стили для анимаций на сайте "Вода-даром.ру"
+ * Файл: css/animations.css
+ */
+
+
+/* Анимации для элементов при скролле */
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Варианты анимаций */
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 1s ease forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s ease forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 1s ease forwards;
+}
+
+.zoom-in {
+    animation: zoomIn 1s ease forwards;
+}
+
+.bounce-in {
+    animation: bounceIn 1s ease forwards;
+}
+
+
+/* Анимация пузырьков */
+
+.bubble {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateY(0);
+    animation: bubbleRise 8s infinite linear;
+}
+
+.bubble:nth-child(1) {
+    width: 15px;
+    height: 15px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 25px;
+    height: 25px;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 20px;
+    height: 20px;
+    left: 35%;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(4) {
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(5) {
+    width: 15px;
+    height: 15px;
+    left: 65%;
+    animation-delay: 2.5s;
+}
+
+.bubble:nth-child(6) {
+    width: 25px;
+    height: 25px;
+    left: 80%;
+    animation-delay: 1.5s;
+}
+
+.bubble:nth-child(7) {
+    width: 20px;
+    height: 20px;
+    left: 90%;
+    animation-delay: 0.5s;
+}
+
+
+/* Анимация волн */
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath fill='%230095eb' opacity='0.1' d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' class='shape-fill'%3E%3C/path%3E%3Cpath fill='%230095eb' opacity='0.2' d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' class='shape-fill'%3E%3C/path%3E%3Cpath fill='%230095eb' opacity='0.3' d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' class='shape-fill'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 1200px 100px;
+}
+
+.wave1 {
+    animation: wave 30s linear infinite;
+    z-index: 1;
+    opacity: 0.5;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.wave2 {
+    animation: wave2 15s linear infinite;
+    z-index: 2;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.wave3 {
+    animation: wave 20s linear infinite;
+    z-index: 3;
+    opacity: 0.3;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+
+/* Анимация пульсации */
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+
+/* Эффект волны при клике */
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+
+/* Анимация карточек */
+
+.card-hover-effect {
+    transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 149, 235, 0.2);
+}
+
+
+/* Анимация цифр в счетчиках */
+
+.counter {
+    display: inline-block;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+
+/* Анимация шагов процесса */
+
+.timeline-item.animated {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+
+/* Анимация слайдера отзывов */
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+
+/* Анимация кнопки "Наверх" */
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0095eb, #00c3ff);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 15px rgba(0, 149, 235, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #0080cc, #0095eb);
+    transform: translateY(-5px);
+}
+
+
+/* Анимация выделения в поиске */
+
+.highlight {
+    background-color: rgba(0, 149, 235, 0.15);
+    padding: 0 3px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+
+/* Анимация уведомлений */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    max-width: 400px;
+}
+
+.notification.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.notification-content {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.notification-success .notification-icon {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification-error .notification-icon {
+    background-color: #f44336;
+    color: white;
+}
+
+.notification-warning .notification-icon {
+    background-color: #ff9800;
+    color: white;
+}
+
+.notification-info .notification-icon {
+    background-color: #0095eb;
+    color: white;
+}
+
+
+/* Анимация для ошибок в форме */
+
+.error-message {
+    color: #f44336;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.form-control.error {
+    border-color: #f44336;
+}
+
+
+/* Определения анимаций */
+
+
+/* Появление */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Появление снизу */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Появление сверху */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Появление слева */
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Появление справа */
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Увеличение */
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Прыжок */
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Движение пузырьков */
+
+@keyframes bubbleRise {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    20% {
+        opacity: 0.7;
+        transform: translateY(80%) translateX(-15px);
+    }
+    40% {
+        opacity: 0.7;
+        transform: translateY(60%) translateX(15px);
+    }
+    60% {
+        opacity: 0.7;
+        transform: translateY(40%) translateX(-15px);
+    }
+    80% {
+        opacity: 0.7;
+        transform: translateY(20%) translateX(15px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+
+/* Движение волн */
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1200px;
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1200px;
+    }
+}
+
+
+/* Пульсация */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Эффект волны при клике */
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+/* Масштабирование пузырьков */
+
+@keyframes dropScale {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* Медиа запросы для адаптивности анимаций */
+
+@media (max-width: 767px) {
+    .animate-on-scroll {
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .wave {
+        height: 60px;
+        background-size: 1200px 60px;
+    }
+    .notification {
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
