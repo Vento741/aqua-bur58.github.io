@@ -24,14 +24,45 @@
 /* CSS переменные */
 
 :root {
+    /* Основные цвета сайта */
+    --primary-color: #0088cc;
+    --primary-dark: #006699;
+    --primary-light: #37a3df;
+    --secondary-color: #00aae7;
+    --accent-color: #ff9900;
+    --light-color: #e9f5fe;
+    --dark-color: #1e3a52;
+    --white-color: #ffffff;
+    --text-color: #333333;
+    --text-light: #657c89;
+    --text-muted: #b3c0c9;
+    --background-color: #f8fbff;
+    --background-light: #f2f7fc;
+    --border-color: #e1ebf2;
+    /* Переменные размеров шрифтов для адаптивности */
+    --fs-xxl: 3.5rem;
+    /* Для крупных заголовков */
+    --fs-xl: 2.5rem;
+    /* Для заголовков h1 */
+    --fs-lg: 2rem;
+    /* Для заголовков h2 */
+    --fs-md: 1.5rem;
+    /* Для заголовков h3 */
+    --fs-sm: 1.125rem;
+    /* Для основного текста */
+    --fs-xs: 0.875rem;
+    /* Для мелкого текста */
+    /* Переменные отступов для адаптивности */
+    --spacing-xxl: 4rem;
+    --spacing-xl: 3rem;
+    --spacing-lg: 2rem;
+    --spacing-md: 1.5rem;
+    --spacing-sm: 1rem;
+    --spacing-xs: 0.5rem;
     /* Цвета */
-    --primary-color: #0095eb;
-    --secondary-color: #00a2ff;
-    --accent-color: #00c3ff;
     --light-blue: #f5fbff;
     --mid-blue: #e1f5ff;
     --dark-blue: #005b89;
-    --white: #ffffff;
     --black: #333333;
     --gray: #ff00ea;
     --light-gray: #f3f5f7;
@@ -54,6 +85,97 @@
     --transition-fast: all 0.3s ease;
     --transition-normal: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     --transition-slow: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media (max-width: 991px) {
+     :root {
+        --fs-xxl: 3rem;
+        --fs-xl: 2.25rem;
+        --fs-lg: 1.75rem;
+        --fs-md: 1.25rem;
+        --fs-sm: 1rem;
+        --fs-xs: 0.8125rem;
+        --spacing-xxl: 3rem;
+        --spacing-xl: 2.5rem;
+        --spacing-lg: 1.75rem;
+        --spacing-md: 1.25rem;
+        --spacing-sm: 0.875rem;
+        --spacing-xs: 0.4375rem;
+    }
+}
+
+@media (max-width: 767px) {
+     :root {
+        --fs-xxl: 2.5rem;
+        --fs-xl: 2rem;
+        --fs-lg: 1.5rem;
+        --fs-md: 1.125rem;
+        --fs-sm: 0.9375rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2.5rem;
+        --spacing-xl: 2rem;
+        --spacing-lg: 1.5rem;
+        --spacing-md: 1rem;
+        --spacing-sm: 0.75rem;
+        --spacing-xs: 0.375rem;
+    }
+}
+
+
+/* Для средних мобильных устройств (включая 393px) */
+
+@media (min-width: 375px) and (max-width: 480px) {
+     :root {
+        --fs-xxl: 2rem;
+        --fs-xl: 1.75rem;
+        --fs-lg: 1.4rem;
+        --fs-md: 1.05rem;
+        --fs-sm: 0.875rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2.2rem;
+        --spacing-xl: 1.7rem;
+        --spacing-lg: 1.3rem;
+        --spacing-md: 0.9rem;
+        --spacing-sm: 0.65rem;
+        --spacing-xs: 0.35rem;
+    }
+}
+
+
+/* Специально для экранов шириной 393px */
+
+@media (min-width: 390px) and (max-width: 394px) {
+     :root {
+        --fs-xxl: 2.1rem;
+        --fs-xl: 1.75rem;
+        --fs-lg: 1.35rem;
+        --fs-md: 1.02rem;
+        --fs-sm: 0.865rem;
+        --fs-xs: 0.73rem;
+        --spacing-xxl: 2.1rem;
+        --spacing-xl: 1.65rem;
+        --spacing-lg: 1.28rem;
+        --spacing-md: 0.88rem;
+        --spacing-sm: 0.63rem;
+        --spacing-xs: 0.33rem;
+    }
+}
+
+@media (max-width: 374px) {
+     :root {
+        --fs-xxl: 1.75rem;
+        --fs-xl: 1.5rem;
+        --fs-lg: 1.25rem;
+        --fs-md: 1rem;
+        --fs-sm: 0.875rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2rem;
+        --spacing-xl: 1.5rem;
+        --spacing-lg: 1.25rem;
+        --spacing-md: 0.875rem;
+        --spacing-sm: 0.625rem;
+        --spacing-xs: 0.3125rem;
+    }
 }
 
 
@@ -310,9 +432,9 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(208, 219, 231, 0.137) 0%, rgba(55, 55, 56, 0.65) 100%), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    background: linear-gradient(to bottom, rgba(8, 8, 8, 0.219) 0%, rgba(29, 29, 29, 0.459) 100%), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.438) 0%, rgba(0, 0, 0, 0.753) 100%);
+    /* backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px); */
     z-index: 0;
 }
 
@@ -477,20 +599,22 @@ section {
 .hero__features {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    padding: 25px 0;
+    margin-bottom: -50px;
+    padding: 5px 0;
     background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(1px);
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .hero__features .row {
-    max-width: 1440px;
+    max-width: 1700px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 15px;
+    padding: 0 5px;
+    /* margin-top: 100px; */
 }
 
 .hero__title::after {
@@ -501,7 +625,7 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.3));
+    background: linear-gradient(90deg, #4b4b4b38, rgba(43, 43, 43, 0.205));
     border-radius: 2px;
 }
 
@@ -1137,6 +1261,36 @@ section {
 }
 
 
+/* Изменение ширины колонок для карточек */
+
+@media (min-width: 992px) {
+    .about-content-wrapper .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .about-content-wrapper .col-lg-4 {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 33.33%;
+        flex: 0 0 33.33%;
+    }
+    /* Контейнер с увеличенной шириной для десктопов */
+    .about .container {
+        max-width: 1500px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    /* Уменьшение вертикальных отступов секции about */
+    .about {
+        padding: 70px 0 130px;
+    }
+    /* Сокращение вертикального расстояния между секцией и CTA блоком */
+    .about-cta-wrapper {
+        margin-top: 30px !important;
+    }
+}
+
+
 /* Медиа-запросы для адаптивности */
 
 @media (max-width: 991px) {
@@ -1188,36 +1342,6 @@ section {
 }
 
 
-/* Изменение ширины колонок для карточек */
-
-@media (min-width: 992px) {
-    .about-content-wrapper .row {
-        margin-left: -10px;
-        margin-right: -10px;
-    }
-    .about-content-wrapper .col-lg-4 {
-        padding-left: 10px;
-        padding-right: 10px;
-        max-width: 33.33%;
-        flex: 0 0 33.33%;
-    }
-    /* Контейнер с увеличенной шириной для десктопов */
-    .about .container {
-        max-width: 1500px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    /* Уменьшение вертикальных отступов секции about */
-    .about {
-        padding: 70px 0 130px;
-    }
-    /* Сокращение вертикального расстояния между секцией и CTA блоком */
-    .about-cta-wrapper {
-        margin-top: 30px !important;
-    }
-}
-
-
 /* Стили для анимированной волны между секциями */
 
 .wave-separator {
@@ -1228,6 +1352,19 @@ section {
     z-index: 5;
     margin-top: -30px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(225, 245, 255, 0.3));
+}
+
+
+/* Специальные стили для волны на экранах 393px */
+
+@media (min-width: 390px) and (max-width: 394px) {
+    .wave-separator {
+        margin-top: -5px;
+        height: 80px;
+    }
+    .wave-animation {
+        height: 60px;
+    }
 }
 
 .wave-top-line {

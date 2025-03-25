@@ -405,3 +405,60 @@
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 575px) {
+    .footer-top {
+        padding: 30px 0 20px;
+    }
+    .footer-title {
+        font-size: 1.0rem;
+    }
+    .footer-menu {
+        font-size: 0.8rem;
+    }
+    .footer-contact-item {
+        font-size: 0.8rem;
+    }
+    .footer-connect {
+        font-size: 0.8rem;
+    }
+    .footer-newsletter h5 {
+        font-size: 0.8rem;
+    }
+    .footer-newsletter .form-control {
+        font-size: 0.8rem;
+    }
+    .footer-newsletter .btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 393px) {
+    .footer-top {
+        padding: 10px 0 5px;
+    }
+    .footer-logo {
+        margin-left: -90px;
+    }
+    .footer-logo img {
+        height: 80px;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer-top {
+        padding: 20px 0 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer-top {
+        padding: 10px 0 5px;
+    }
+    .footer-logo {
+        margin-left: -80px;
+    }
+    .footer-logo img {
+        height: 80px;
+    }
+}
