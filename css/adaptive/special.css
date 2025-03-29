@@ -151,11 +151,11 @@
         margin-left: -60px;
     }
     .header .navbar-brand .logo {
-        margin-left: -60px;
+        margin-left: -50px;
     }
     .header.scrolled .logo {
         height: 35px;
-        margin-left: -60px;
+        margin-left: -40px;
     }
     .header .navbar-toggler {
         font-size: 1rem;
@@ -210,11 +210,11 @@
     }
     /* Волны */
     .wave-separator {
-        margin-top: -55px;
+        margin-top: 15px;
     }
     .wave-separator .wave-animation {
-        height: 35px;
-        margin-top: -10px;
+        height: 36px;
+        margin-top: -13px;
     }
 }
 
