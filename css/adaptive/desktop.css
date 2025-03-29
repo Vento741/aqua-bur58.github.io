@@ -1,0 +1,150 @@
+/* ======================================
+   БОЛЬШИЕ ЭКРАНЫ (от 1200px)
+   ====================================== */
+
+@media (min-width: 1200px) {
+    /* Контейнер */
+    .container {
+        max-width: 1340px;
+    }
+    /* Главный экран (Hero) */
+    .hero__title {
+        font-size: 6rem;
+    }
+    .hero__subtitle {
+        font-size: 1.9rem;
+        max-width: 95%;
+    }
+    /* Больший контейнер для секции hero */
+    .hero .container {
+        max-width: 1440px;
+    }
+    /* Объединение текста "Профессиональное бурение скважин в Пензе и области" в одну строку */
+    .hero__subtitle .accent-text+br {
+        display: none;
+    }
+    /* Динамический текст остаётся на своей строке */
+    .hero__subtitle #dynamic-text {
+        display: inline-block;
+    }
+    /* Предотвращаем перенос слова "области" */
+    .hero__subtitle span:last-child {
+        white-space: nowrap;
+    }
+    /* Секция о нас */
+    .about-text {
+        padding-right: 30px;
+    }
+    /* Предотвращение переноса для текста */
+    .no-wrap-desktop {
+        white-space: nowrap;
+    }
+    /* Отступы в тексте */
+    .section-heading p {
+        font-size: 1.2rem;
+    }
+    #about .section-heading p {
+        font-size: 1.25rem;
+    }
+    /* Список услуг */
+    .offers-card .service-list li {
+        font-size: 1.05rem;
+    }
+    .offers-card .service-list span {
+        font-size: 1.05rem;
+    }
+}
+
+
+/* ======================================
+   БУРГЕР-МЕНЮ ДЛЯ ЭКРАНОВ ДО 1300px
+   ====================================== */
+
+@media (min-width: 1300px) {
+    /* Показываем обычное меню на больших экранах */
+    .navbar-expand-custom .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none !important;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
+
+@media (max-width: 1299px) {
+    /* Прячем стандартное меню, показываем бургер */
+    .navbar-expand-custom .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-expand-custom .navbar-collapse.show {
+        display: block !important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: block;
+    }
+    /* Стили для раскрывающегося меню */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: rgba(0, 149, 235, 0.95);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    /* Стили для навигационных ссылок */
+    .header .nav-item {
+        margin-bottom: 8px;
+    }
+    .header .nav-link.buoy-link {
+        display: block;
+        padding: 8px 15px;
+        text-align: center;
+    }
+}
+
+
+/* ======================================
+   ДЕСКТОПЫ (992px - 1199px)
+   ====================================== */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Объединение текста "Профессиональное бурение скважин в Пензе и области" в одну строку */
+    .hero__subtitle .accent-text+br {
+        display: none;
+    }
+    /* Больший контейнер для секции hero */
+    .hero .container {
+        max-width: 1000px;
+    }
+    /* Предотвращаем перенос слова "области" */
+    .hero__subtitle span:last-child {
+        white-space: nowrap;
+    }
+}
+
+
+/* ======================================
+   ВСЕ ДЕСКТОПЫ (от 992px)
+   ====================================== */
+
+@media (min-width: 992px) {
+    /* Объединение текста "Профессиональное бурение скважин в Пензе и области" в одну строку */
+    .hero__subtitle .accent-text+br {
+        display: none;
+    }
+    /* Предотвращаем перенос слова "области" */
+    .hero__subtitle span:last-child {
+        white-space: nowrap;
+    }
+}

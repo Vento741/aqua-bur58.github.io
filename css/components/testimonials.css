@@ -421,9 +421,15 @@
     .testimonial-text {
         font-size: 14px;
     }
+    .testimonials-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .testimonials-cta .btn {
-        margin-bottom: 10px;
-        width: 100%;
+        margin: 5px 0;
+        width: 80%;
+        max-width: 280px;
     }
 }
 

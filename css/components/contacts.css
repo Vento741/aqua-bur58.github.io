@@ -368,24 +368,51 @@
 }
 
 .contacts-schedule {
+    background: rgba(0, 149, 235, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-schedule h4 {
+    font-size: 1.1rem;
+    color: #005b89;
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 8px;
 }
 
-.contacts-day {
+.contact-schedule h4 i {
+    color: #0095eb;
+}
+
+.schedule-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.schedule-day {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(0, 149, 235, 0.1);
 }
 
-.contacts-day-name {
-    color: #666;
+.schedule-day:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.contacts-day-time {
+.schedule-day .day {
     font-weight: 600;
-    color: #005b89;
+    color: #444;
+}
+
+.schedule-day .time {
+    color: #0095eb;
+    font-weight: 600;
 }
 
 .contacts-day.current {
@@ -627,6 +654,34 @@
     .contacts-wave svg {
         height: 40px;
     }
+    .contact-schedule {
+        padding: 15px;
+    }
+    .contact-schedule h4 {
+        font-size: 1rem;
+    }
+    .schedule-day {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        padding-bottom: 10px;
+    }
+    .schedule-day .day {
+        font-size: 0.9rem;
+    }
+    .schedule-day .time {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .contact-schedule {
+        padding: 15px;
+    }
+    .schedule-day .day,
+    .schedule-day .time {
+        font-size: 0.9rem;
+    }
 }
 
 
@@ -861,54 +916,6 @@
     margin-bottom: 25px;
 }
 
-.contact-schedule {
-    background: rgba(0, 149, 235, 0.03);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-}
-
-.contact-schedule h4 {
-    font-size: 1.1rem;
-    color: #005b89;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.contact-schedule h4 i {
-    color: #0095eb;
-}
-
-.schedule-grid {
-    display: grid;
-    gap: 10px;
-}
-
-.schedule-day {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed rgba(0, 149, 235, 0.1);
-}
-
-.schedule-day:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.schedule-day .day {
-    font-weight: 600;
-    color: #444;
-}
-
-.schedule-day .time {
-    color: #0095eb;
-    font-weight: 600;
-}
-
 .social-block {
     margin-top: 25px;
 }
@@ -945,14 +952,6 @@
 
 .social-icon-link[title="ВКонтакте"]:hover {
     background: #4c75a3;
-}
-
-.social-icon-link[title="Instagram"]:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.social-icon-link[title="YouTube"]:hover {
-    background: #ff0000;
 }
 
 .social-icon-link[title="Telegram"]:hover {

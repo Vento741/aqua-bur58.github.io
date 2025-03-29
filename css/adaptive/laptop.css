@@ -1,0 +1,62 @@
+/* ======================================
+   ДЕСКТОПЫ (992px - 1199px)
+   ====================================== */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Контейнер */
+    .container {
+        max-width: 960px;
+    }
+    /* Главный экран (Hero) */
+    .hero__title {
+        font-size: 3.2rem;
+    }
+    .hero__subtitle {
+        font-size: 1.6rem;
+    }
+    .hero {
+        padding: 160px 0 130px;
+    }
+    /* Заголовки */
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+    /* Секция о нас */
+    .about-subtitle {
+        font-size: 1.6rem;
+    }
+    /* Преимущества */
+    .advantage-content h4 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Специальные стили для десктопов */
+
+@media (min-width: 992px) {
+    .about-content-wrapper .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .about-content-wrapper .col-lg-4 {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 33.33%;
+        flex: 0 0 33.33%;
+    }
+    /* Контейнер с увеличенной шириной для десктопов */
+    .about .container {
+        max-width: 1500px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    /* Уменьшение вертикальных отступов секции about */
+    .about {
+        padding: 70px 0 130px;
+    }
+    /* Сокращение вертикального расстояния между секцией и CTA блоком */
+    .about-cta-wrapper {
+        margin-top: 30px !important;
+    }
+}

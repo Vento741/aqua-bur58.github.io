@@ -1,0 +1,429 @@
+/* Очень узкие экраны (до 320px) */
+
+@media screen and (max-width: 320px) {
+    html,
+    body {
+        height: 100% !important;
+        overflow-x: hidden !important;
+    }
+    body {
+        font-size: 13px;
+    }
+    /* Специальный класс для тела при открытом меню */
+    body.menu-open {
+        overflow: hidden !important;
+    }
+    /* Специальный класс для самых узких устройств */
+    body.narrow-device .navbar-collapse.show {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    /* Контейнер */
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+        overflow-x: hidden;
+    }
+    /* Шапка сайта */
+    .header {
+        padding: 6px 8px;
+    }
+    .header .logo {
+        height: 35px;
+        margin-left: -40px;
+        margin-top: 5px;
+    }
+    .header.scrolled .logo {
+        height: 30px;
+        margin-left: -40px;
+    }
+    .header .navbar-toggler {
+        font-size: 0.9rem !important;
+        padding: 3px 6px !important;
+        margin-right: 5px;
+        position: relative;
+        z-index: 1100 !important;
+    }
+    /* Скрываем номер телефона на мобильных устройствах */
+    .header .phone-number {
+        display: none !important;
+    }
+    .header__contacts {
+        display: none !important;
+    }
+    .header.scrolled .navbar-toggler {
+        font-size: 0.8rem;
+        padding: 3px 5px;
+    }
+    .header .navbar-brand {
+        max-width: 100px;
+    }
+    .header .navbar-collapse {
+        padding: 8px;
+        margin-top: 8px;
+        background-color: rgba(0, 149, 235, 0.95);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 1090 !important;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        height: auto !important;
+        max-height: 80vh;
+        overflow-y: auto;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    /* Состояние при активном меню */
+    .header .navbar-collapse.show {
+        display: block !important;
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+    .header .nav-link.buoy-link {
+        padding: 6px 10px;
+        font-size: 13px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    .header.scrolled .nav-link.buoy-link {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    /* Уменьшаем количество пузырьков для мобильных устройств */
+    .bubble-5,
+    .bubble-6,
+    .bubble-7,
+    .bubble-8,
+    .bubble-9,
+    .bubble-10,
+    .bubble-11,
+    .bubble-12,
+    .bubble-13,
+    .bubble-14,
+    .bubble-15 {
+        display: none;
+    }
+    .bubble-1,
+    .bubble-2 {
+        opacity: 0.2;
+    }
+    .bubble-3,
+    .bubble-4 {
+        opacity: 0.15;
+    }
+    /* Секции */
+    section {
+        padding: 25px 0;
+    }
+    /* Заголовки */
+    .section-heading {
+        margin-bottom: 25px;
+    }
+    .section-heading h2 {
+        font-size: 1.3rem;
+    }
+    .section-heading p {
+        font-size: 0.8rem;
+        padding-top: 10px;
+    }
+    /* Главный экран */
+    .hero {
+        padding: 100px 0 100px !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        height: 100vh !important;
+    }
+    .hero__title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+        white-space: normal;
+    }
+    .hero__title .location-text {
+        font-size: 1.1rem;
+        white-space: normal;
+    }
+    .hero__subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        overflow: hidden;
+        white-space: normal;
+    }
+    .hero__messenger-link {
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+    .hero__cta {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .hero__features {
+        display: none;
+    }
+    /* Кнопки */
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    .btn-lg {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+    }
+    /* Виджет звонка */
+    .call-button-wrapper {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .call-button-link {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .call-button-link i {
+        font-size: 1.2rem !important;
+    }
+    .call-button {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    /* Преимущества */
+    .about-card {
+        padding: 10px 5px;
+        margin-bottom: 15px;
+    }
+    .about-card.advantages-card {
+        padding: 8px 2px;
+    }
+    .about-card.advantages-card .advantages-grid {
+        gap: 0;
+    }
+    .about-card.advantages-card .advantage-item {
+        padding: 5px 3px;
+        margin-bottom: 5px;
+    }
+    .about-card.advantages-card .advantage-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+        margin-bottom: 3px;
+    }
+    .about-card.advantages-card h4 {
+        font-size: 0.75rem;
+        margin-bottom: 2px;
+    }
+    .about-card.advantages-card p {
+        font-size: 0.65rem;
+        line-height: 1.1;
+        word-break: break-word;
+    }
+    .card-header {
+        padding: 8px 5px;
+        margin-bottom: 8px;
+    }
+    .card-header h3 {
+        font-size: 0.9rem;
+    }
+    .card-header .icon-wrap {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+    }
+    /* CTA блок */
+    .about-cta-wrapper {
+        margin-top: 10px !important;
+    }
+    .about-cta {
+        padding: 12px 8px !important;
+    }
+    .about-cta h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    .about-cta p {
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+    }
+    .btn-cta {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+    /* Стили для динамического текста */
+    #dynamic-text {
+        white-space: normal !important;
+        display: inline !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+    #dynamic-text::after {
+        display: none !important;
+    }
+    .hero__subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        overflow: hidden !important;
+        white-space: normal !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .hero__subtitle br {
+        display: none !important;
+    }
+    /* Фиксируем остальной текст */
+    .hero__title,
+    .hero__title .location-text {
+        white-space: normal !important;
+        overflow: hidden !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* Добавляем стили для экранов до 374px */
+
+@media screen and (min-width: 321px) and (max-width: 374px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 1.75rem;
+        --fs-xl: 1.5rem;
+        --fs-lg: 1.25rem;
+        --fs-md: 1rem;
+        --fs-sm: 0.875rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2rem;
+        --spacing-xl: 1.5rem;
+        --spacing-lg: 1.25rem;
+        --spacing-md: 0.875rem;
+        --spacing-sm: 0.625rem;
+        --spacing-xs: 0.3125rem;
+    }
+    /* Главный экран */
+    .hero {
+        padding: 100px 0 70px;
+    }
+    .hero__title {
+        font-size: 1.5rem;
+        white-space: normal;
+    }
+    .hero__title .location-text {
+        white-space: normal;
+    }
+    .hero__subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        white-space: normal;
+    }
+    /* Стили для динамического текста */
+    #dynamic-text {
+        white-space: normal !important;
+        display: inline !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+    #dynamic-text::after {
+        display: none !important;
+    }
+    .hero__subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        white-space: normal !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .hero__subtitle br {
+        display: none !important;
+    }
+    /* Фиксируем остальной текст */
+    .hero__title,
+    .hero__title .location-text {
+        white-space: normal !important;
+        overflow: hidden !important;
+        max-width: 100% !important;
+        font-size: 1.1rem;
+    }
+    /* Кнопки */
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+    .btn-lg {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+    /* Стили хедера */
+    .header {
+        padding: 8px 10px;
+    }
+    .header .logo {
+        height: 38px;
+        margin-top: 3px;
+    }
+    .header.scrolled .logo {
+        height: 32px;
+        margin-top: 0;
+    }
+    .header .navbar-toggler {
+        font-size: 1.1rem;
+        padding: 4px 8px;
+    }
+    .header.scrolled .navbar-toggler {
+        font-size: 0.9rem;
+        padding: 3px 6px;
+    }
+    .header .phone-number {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+    .header .phone-number i {
+        font-size: 0.85rem !important;
+    }
+    .header.scrolled {
+        padding: 5px 10px;
+    }
+    .header__contacts {
+        margin-right: 8px;
+    }
+    .header .navbar-brand {
+        max-width: 120px;
+    }
+    .header .navbar-collapse {
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .hero__title .highlight-text {
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 390px) {
+    .hero__title .highlight-text {
+        font-size: 2.5rem;
+    }
+    .header .logo {
+        height: 38px;
+        margin-top: 3px;
+    }
+    .header .navbar-brand .logo {
+        margin-left: -60px;
+    }
+    .header.scrolled .logo {
+        height: 32px;
+        margin-top: 0;
+    }
+}

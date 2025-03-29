@@ -1,57 +1,36 @@
-/* Адаптивные стили для сайта */
+/* ======================================
+   АДАПТИВНЫЕ СТИЛИ
+   ====================================== */
 
 
-/* Extra large screens (desktop, 1200px and up) */
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1340px;
-    }
-    .hero__title {
-        font-size: 6rem;
-    }
-    .hero__subtitle {
-        font-size: 1.9rem;
-    }
-    .about-text {
-        padding-right: 30px;
-    }
-}
+/* Специальные стили для десктопов */
 
 
-/* Large screens (desktop, 992px and up) */
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .container {
-        max-width: 960px;
-    }
-    .hero__title {
-        font-size: 3.2rem;
-    }
-    .hero__subtitle {
-        font-size: 1.6rem;
-    }
-    .section-heading h2 {
-        font-size: 2.3rem;
-    }
-    .hero {
-        padding: 160px 0 130px;
-    }
-    .about-subtitle {
-        font-size: 1.6rem;
-    }
-    .advantage-content h4 {
-        font-size: 1.1rem;
-    }
-}
-
-
-/* Medium screens (tablets, 768px and up) */
+/* ======================================
+   ПЛАНШЕТЫ (768px - 991px)
+   ====================================== */
 
 @media (min-width: 768px) and (max-width: 991px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2.5rem;
+        --fs-xl: 2rem;
+        --fs-lg: 1.5rem;
+        --fs-md: 1.125rem;
+        --fs-sm: 0.9375rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2.5rem;
+        --spacing-xl: 2rem;
+        --spacing-lg: 1.5rem;
+        --spacing-md: 1rem;
+        --spacing-sm: 0.75rem;
+        --spacing-xs: 0.375rem;
+    }
+    /* Контейнер */
     .container {
         max-width: 720px;
     }
+    /* Главный экран (Hero) */
     .hero {
         padding: 120px 0 80px;
         min-height: auto;
@@ -63,18 +42,6 @@
         font-size: 1.4rem;
         margin-bottom: 25px;
         max-width: 95%;
-    }
-    .section-heading h2 {
-        font-size: 2.2rem;
-    }
-    .section-heading p {
-        font-size: 1.1rem;
-    }
-    section {
-        padding: 70px 0;
-    }
-    .wave-divider .wave {
-        height: 60px;
     }
     .hero__cta {
         flex-direction: column;
@@ -88,6 +55,25 @@
         margin-top: 40px;
         transform: perspective(1000px) rotateY(0);
     }
+    /* Секции */
+    section {
+        padding: 70px 0;
+    }
+    /* Заголовки */
+    .section-heading h2 {
+        font-size: 2.2rem;
+    }
+    .section-heading p {
+        font-size: 1.1rem;
+    }
+    /* Волны */
+    .wave-divider .wave {
+        height: 60px;
+    }
+    /* Секция о нас */
+    .about {
+        padding: 50px 0 120px;
+    }
     .about-image {
         margin-bottom: 50px;
     }
@@ -97,6 +83,7 @@
     .about-text {
         font-size: 1rem;
     }
+    /* Опыт работы (бейдж) */
     .experience-badge {
         bottom: 20px;
         right: 20px;
@@ -109,19 +96,47 @@
     .experience-text {
         font-size: 0.8rem;
     }
+    /* Кнопки */
     .btn-lg {
         padding: 12px 35px;
         font-size: 1rem;
     }
+    /* CTA блок */
+    .about-cta h3 {
+        font-size: 1.4rem;
+    }
+    /* Разделители секций */
+    .section-divider svg {
+        height: 60px;
+    }
 }
 
 
-/* Small screens (landscape phones, 576px and up) */
+/* ======================================
+   МОБИЛЬНЫЕ (576px - 767px)
+   ====================================== */
 
 @media (min-width: 576px) and (max-width: 767px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2.5rem;
+        --fs-xl: 2rem;
+        --fs-lg: 1.5rem;
+        --fs-md: 1.125rem;
+        --fs-sm: 0.9375rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2.5rem;
+        --spacing-xl: 2rem;
+        --spacing-lg: 1.5rem;
+        --spacing-md: 1rem;
+        --spacing-sm: 0.75rem;
+        --spacing-xs: 0.375rem;
+    }
+    /* Контейнер */
     .container {
         max-width: 540px;
     }
+    /* Главный экран (Hero) */
     .hero {
         padding: 120px 0 90px;
         min-height: auto;
@@ -133,18 +148,6 @@
         font-size: 1.2rem;
         margin-bottom: 20px;
         max-width: 95%;
-    }
-    .section-heading h2 {
-        font-size: 2rem;
-    }
-    .section-heading p {
-        font-size: 1rem;
-    }
-    section {
-        padding: 60px 0;
-    }
-    .wave-divider .wave {
-        height: 50px;
     }
     .hero__cta {
         flex-direction: column;
@@ -158,13 +161,40 @@
         margin-top: 30px;
         transform: perspective(1000px) rotateY(0);
     }
+    /* Секции */
+    section {
+        padding: 60px 0;
+    }
+    /* Заголовки */
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+    .section-heading p {
+        font-size: 1rem;
+    }
+    /* Волны */
+    .wave-divider .wave {
+        height: 50px;
+    }
+    /* Кнопки */
     .btn-lg {
         padding: 12px 30px;
         font-size: 0.9rem;
     }
+    /* Секция о нас */
     .about-image {
         margin-bottom: 40px;
     }
+    .about-subtitle {
+        font-size: 1.5rem;
+        text-align: center;
+        display: block;
+    }
+    .about-text {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+    /* Опыт работы (бейдж) */
     .experience-badge {
         bottom: 15px;
         right: 15px;
@@ -177,15 +207,7 @@
     .experience-text {
         font-size: 0.7rem;
     }
-    .about-subtitle {
-        font-size: 1.5rem;
-        text-align: center;
-        display: block;
-    }
-    .about-text {
-        font-size: 0.95rem;
-        text-align: center;
-    }
+    /* Преимущества */
     .advantages {
         gap: 20px;
     }
@@ -201,7 +223,10 @@
     .advantage-content p {
         font-size: 0.9rem;
     }
-    /* Адаптация номера телефона для мобильных */
+    /* Шапка сайта */
+    .header {
+        padding: 10px 15px;
+    }
     .header__contacts {
         margin-right: 5px;
     }
@@ -216,16 +241,36 @@
         font-size: 0.8rem !important;
         color: #ffffff !important;
     }
+    .header .nav-link.buoy-link {
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    /* Анимации */
+    .header .buoy-link {
+        animation-duration: 2s;
+    }
+    .bubble {
+        opacity: 0.3;
+        animation-duration: 5s !important;
+    }
+    .bubble-5,
+    .bubble-6 {
+        display: none;
+    }
 }
 
 
-/* Extra small screens (phones, less than 576px) */
+/* ======================================
+   МОБИЛЬНЫЕ (макс. 575px)
+   ====================================== */
 
 @media (max-width: 575px) {
+    /* Контейнер */
     .container {
         width: 100%;
         padding: 0 20px;
     }
+    /* Главный экран (Hero) */
     .hero {
         padding: 100px 0 70px;
         min-height: auto;
@@ -237,22 +282,6 @@
         font-size: 1rem;
         margin-bottom: 20px;
         max-width: 100%;
-    }
-    .section-heading h2 {
-        font-size: 1.8rem;
-    }
-    .section-heading p {
-        font-size: 0.95rem;
-    }
-    .section-heading h2::after {
-        width: 60px;
-        height: 2px;
-    }
-    section {
-        padding: 50px 0;
-    }
-    .wave-divider .wave {
-        height: 40px;
     }
     .hero__cta {
         flex-direction: column;
@@ -272,6 +301,32 @@
         margin-top: 25px;
         transform: none;
     }
+    .hero__features .hero-feature {
+        font-size: 0.8rem;
+    }
+    .hero__features i {
+        font-size: 1rem;
+    }
+    /* Секции */
+    section {
+        padding: 50px 0;
+    }
+    /* Заголовки */
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+    .section-heading p {
+        font-size: 0.95rem;
+    }
+    .section-heading h2::after {
+        width: 60px;
+        height: 2px;
+    }
+    /* Волны */
+    .wave-divider .wave {
+        height: 40px;
+    }
+    /* Кнопки */
     .btn {
         padding: 10px 25px;
         font-size: 0.9rem;
@@ -280,6 +335,7 @@
         padding: 12px 30px;
         font-size: 0.9rem;
     }
+    /* Кнопка звонка */
     .call-btn-fixed {
         width: 50px;
         height: 50px;
@@ -287,9 +343,20 @@
         right: 20px;
         font-size: 20px;
     }
+    /* Секция о нас */
     .about-image {
         margin-bottom: 40px;
     }
+    .about-subtitle {
+        font-size: 1.4rem;
+        text-align: center;
+        display: block;
+    }
+    .about-text {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    /* Опыт работы (бейдж) */
     .experience-badge {
         bottom: 10px;
         right: 10px;
@@ -302,15 +369,7 @@
     .experience-text {
         font-size: 0.65rem;
     }
-    .about-subtitle {
-        font-size: 1.4rem;
-        text-align: center;
-        display: block;
-    }
-    .about-text {
-        font-size: 0.9rem;
-        text-align: center;
-    }
+    /* Преимущества */
     .advantages {
         gap: 20px;
     }
@@ -332,20 +391,68 @@
     .advantage-content p {
         font-size: 0.85rem;
     }
+    /* Прокрутка вниз */
     .scroll-down {
         bottom: 15px;
         font-size: 24px;
     }
-    .hero__features .hero-feature {
+    /* CTA блок */
+    .feature-tag {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    .about-cta h3 {
+        font-size: 1.2rem;
+    }
+    .about-cta p {
+        font-size: 0.9rem;
+    }
+    .btn-cta {
+        padding: 10px 20px;
         font-size: 0.8rem;
     }
-    .hero__features i {
+    /* Другие элементы */
+    html,
+    body {
+        font-size: 14px;
+    }
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .about-card {
+        margin-bottom: 20px;
+    }
+    .service-item {
+        margin-bottom: 15px;
+    }
+    .testimonial-item {
+        padding: 15px;
+    }
+    .process-title h3 {
+        font-size: 1.4rem;
+    }
+    /* Преимущества */
+    .advantage-item {
+        padding: 10px;
+    }
+    .advantage-icon {
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .advantage-item h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .advantage-item p {
+        font-size: 0.8rem;
     }
 }
 
 
-/* Адаптация для высоких устройств (высокие мобильные телефоны) */
+/* Высокие устройства с маленьким экраном */
 
 @media (max-height: 700px) and (max-width: 575px) {
     .hero {
@@ -368,7 +475,7 @@
 }
 
 
-/* Адаптация для устройств с поддержкой темной темы */
+/* Темная тема */
 
 @media (prefers-color-scheme: dark) {
      :root {
@@ -399,7 +506,7 @@
 }
 
 
-/* Адаптация под печать */
+/* Версия для печати */
 
 @media print {
     .wave-divider,
@@ -459,55 +566,9 @@
 }
 
 
-/* Адаптивные стили для мобильных устройств */
-
-@media (max-width: 767px) {
-    .header {
-        padding: 10px 15px;
-    }
-    /* Адаптация номера телефона для мобильных */
-    .header__contacts {
-        margin-right: 5px;
-    }
-    .header .phone-number {
-        font-size: 0.85rem;
-        padding: 5px 8px;
-    }
-    .header .phone-number i {
-        font-size: 0.8rem;
-    }
-    /* Адаптация пузырьков для мобильных */
-    .bubble {
-        opacity: 0.3;
-    }
-    .bubble-5,
-    .bubble-6 {
-        display: none;
-    }
-    /* Адаптация буйков-ссылок для мобильной версии */
-    .header .nav-link.buoy-link {
-        margin-bottom: 8px;
-        text-align: center;
-    }
-}
-
-
-/* Очень маленькие экраны */
-
-@media (max-width: 480px) {
-    .header .navbar-collapse {
-        padding: 10px;
-    }
-    /* Показываем меньше пузырьков */
-    .bubble-3,
-    .bubble-4 {
-        display: none;
-    }
-    .header .nav-link.buoy-link {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-}
+/* ======================================
+   УТИЛИТЫ
+   ====================================== */
 
 
 /* Белый цвет для цифр телефона в мобильной версии */
@@ -517,736 +578,13 @@
 }
 
 
-/* Стили для анимированных буйков в мобильной версии */
+/* Toast-уведомления для мобильных */
 
 @media (max-width: 767px) {
-    .header .buoy-link {
-        animation-duration: 2s;
-    }
-    /* Ускоряем анимацию пузырьков */
-    .bubble {
-        animation-duration: 5s !important;
-    }
-}
-
-
-/* Размеры для мобильных устройств (320-576px) */
-
-@media (max-width: 576px) {
-    html,
-    body {
-        font-size: 14px;
-    }
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .hero {
-        padding: 120px 0 80px;
-    }
-    .hero__title {
-        font-size: 2.2rem;
-    }
-    .hero__subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-    }
-    .section-heading h2 {
-        font-size: 1.8rem;
-    }
-    .section-heading p {
-        font-size: 0.9rem;
-    }
-    .about-card {
-        margin-bottom: 20px;
-    }
-    .service-item {
-        margin-bottom: 15px;
-    }
-    .testimonial-item {
-        padding: 15px;
-    }
-    .footer-title {
-        @media (max-width: 374px) {
-            .hero {
-                padding: 100px 0 70px;
-            }
-            .hero__title {
-                font-size: 1.5rem;
-            }
-            .hero__subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 15px;
-            }
-            .hero__messenger-link {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-            .btn {
-                padding: 8px 20px;
-                font-size: 0.85rem;
-            }
-            .btn-lg {
-                padding: 10px 25px;
-                font-size: 0.85rem;
-            }
-            section {
-                padding: 40px 0;
-            }
-            .about-subtitle {
-                font-size: 1.1rem;
-            }
-            .section-heading h2 {
-                font-size: 1.4rem;
-            }
-            .section-heading p {
-                font-size: 0.85rem;
-            }
-            .experience-badge {
-                width: 70px;
-                height: 70px;
-            }
-            .experience-years {
-                font-size: 1.4rem;
-            }
-            .experience-text {
-                font-size: 0.6rem;
-            }
-            /* Уменьшаем размеры элементов в карточке преимуществ */
-            .advantages-card .card-header h3 {
-                font-size: 1.1rem;
-            }
-            .advantage-item {
-                margin-bottom: 12px;
-            }
-            .advantage-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-                margin-right: 8px;
-            }
-            .advantage-content h4 {
-                font-size: 0.9rem;
-                margin-bottom: 2px;
-            }
-            .advantage-content p {
-                font-size: 0.75rem;
-                line-height: 1.2;
-            }
-            /* Уменьшаем отступы внутри карточек */
-            .about-card {
-                padding: 12px;
-            }
-            .card-header {
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-            .card-header .icon-wrap {
-                width: 30px;
-                height: 30px;
-                font-size: 14px;
-            }
-            /* Адаптация для блока CTA */
-            .about-cta {
-                padding: 15px 10px !important;
-            }
-            .about-cta h3 {
-                font-size: 1rem;
-            }
-            .about-cta p {
-                font-size: 0.75rem;
-                margin-bottom: 10px;
-            }
-            .btn-cta {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-            }
-        }
-        margin-top: 20px;
-    }
-    .process-title h3 {
-        font-size: 1.4rem;
-    }
-    /* Уменьшаем размер карточек преимуществ */
-    .advantage-item {
-        padding: 10px;
-    }
-    .advantage-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        margin-bottom: 5px;
-    }
-    .advantage-item h4 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-    }
-    .advantage-item p {
-        font-size: 0.8rem;
-    }
-}
-
-
-/* Специально для экранов шириной 393px (популярный размер для Android) */
-
-@media (min-width: 390px) and (max-width: 394px) {
-    html,
-    body {
-        font-size: 13.5px;
-    }
-    .container {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-    .hero {
-        padding: 105px 0 30px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .hero__title {
-        font-size: 3.0rem;
-        margin-bottom: 10px;
-    }
-    .hero__title .location-text {
-        font-size: 1.5rem;
-    }
-    .hero__subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 18px;
-    }
-    .btn {
-        padding: 7px 17px;
-        font-size: 1.2rem;
-    }
-    .hero__features {
-        margin-top: 16rem !important;
-        margin-bottom: 0.5rem;
-    }
-    .hero__features .hero-feature {
-        font-size: 0.75rem;
-    }
-    .hero__features i {
-        font-size: 0.9rem;
-    }
-    .hero__messenger-link {
-        width: 38px;
-        height: 38px;
-        font-size: 18px;
-    }
-    .wave-separator {
-        margin-top: -55px;
-    }
-    .wave-separator .wave-animation {
-        height: 60px;
-    }
-    /* Адаптация размеров секций */
-    section {
-        padding: 35px 0;
-    }
-    .section-heading {
-        margin-bottom: 30px;
-    }
-    .section-heading h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-    /* Адаптация карточки преимуществ */
-    .about-card {
-        padding: 12px;
-        margin-bottom: 15px;
-    }
-    .card-header {
-        padding: 6px 10px;
-        margin-bottom: 8px;
-    }
-    .card-header .icon-wrap {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-        margin-right: 8px;
-    }
-    .card-header h3 {
-        font-size: 1.05rem;
-    }
-    .advantages-grid {
-        gap: 6px;
-    }
-    .advantage-item {
-        padding: 8px;
-        margin-bottom: 6px;
-    }
-    .advantage-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
-        margin-right: 6px;
-    }
-    .advantage-item h4 {
+    .toast {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
         font-size: 0.85rem;
-        margin-bottom: 1px;
-    }
-    .advantage-item p {
-        font-size: 0.72rem;
-        line-height: 1.15;
-    }
-    /* Адаптация для CTA блока */
-    .about-cta {
-        padding: 14px 10px !important;
-    }
-    .about-cta h3 {
-        font-size: 0.95rem;
-        margin-bottom: 5px;
-    }
-    .about-cta p {
-        font-size: 0.72rem;
-        margin-bottom: 8px;
-    }
-    .btn-cta {
-        padding: 6px 14px;
-        font-size: 0.72rem;
-    }
-    /* Другие элементы */
-    .service-item {
-        padding: 10px;
-        margin-bottom: 12px;
-    }
-    .process-item {
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-}
-
-
-/* Средние мобильные экраны (375px-480px) */
-
-@media (min-width: 375px) and (max-width: 480px) {
-    html,
-    body {
-        font-size: 13.5px;
-    }
-    .hero {
-        padding: 110px 0 75px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .hero__title {
-        font-size: 3.0rem;
-    }
-    .hero__subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 18px;
-    }
-    .section-heading h2 {
-        font-size: 1.6rem;
-    }
-    .hero__features {
-        margin-top: 18rem !important;
-        margin-bottom: 0.5rem;
-    }
-    .hero__features .hero-feature {
-        font-size: 0.75rem;
-    }
-    .hero__features i {
-        font-size: 0.9rem;
-    }
-    .section-heading p {
-        font-size: 0.9rem;
-    }
-    /* Уменьшенные размеры для карточки преимуществ */
-    .about-card {
-        padding: 15px;
-        margin-bottom: 18px;
-    }
-    .about-card .advantages-card {
-        padding: 45px;
-    }
-    .card-header {
-        padding: 8px 10px;
-        margin-bottom: 10px;
-    }
-    .card-header .icon-wrap {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-        margin-right: 10px;
-    }
-    .card-header h3 {
-        font-size: 1.1rem;
-    }
-    .advantages-grid {
-        gap: 8px;
-        padding: -10px;
-    }
-    .advantage-item {
-        padding: 30px;
-        margin-bottom: 8px;
-    }
-    .advantage-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 0.85rem;
-        margin-right: 8px;
-    }
-    .advantage-item h4 {
-        font-size: 1.2rem;
-        margin-bottom: 2px;
-    }
-    .advantage-item p {
-        font-size: 0.95rem;
-        line-height: 1.0;
-    }
-    /* Адаптация для кнопок */
-    .btn {
-        padding: 8px 20px;
-        font-size: 1.7rem;
-    }
-    .btn-lg {
-        padding: 5px 20px;
-        font-size: 1.7rem;
-    }
-    /* Адаптация для CTA блока */
-    .about-cta {
-        padding: 15px 12px !important;
-    }
-    .about-cta h3 {
-        font-size: 1rem;
-        margin-bottom: 6px;
-    }
-    .about-cta p {
-        font-size: 0.75rem;
-        margin-bottom: 10px;
-    }
-    .btn-cta {
-        padding: 7px 15px;
-        font-size: 0.75rem;
-    }
-    .wave-separator {
-        margin-top: -45px;
-    }
-    .wave-separator .wave-animation {
-        height: 50px;
-    }
-}
-
-
-/* Очень маленькие экраны (320-374px) */
-
-@media (max-width: 360px) {
-    html,
-    body {
-        font-size: 13px;
-    }
-    section {
-        padding: 35px 0;
-    }
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .hero {
-        padding: 100px 0 150px;
-    }
-    .hero__title {
-        font-size: 2.8rem;
-    }
-    .hero__subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-    }
-    .hero__messenger-link {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    .btn {
-        padding: 6px 25px;
-        font-size: 1.2rem;
-    }
-    .btn-lg {
-        padding: 8px 30px;
-        font-size: 1.2rem;
-    }
-    section {
-        padding: 40px 0;
-    }
-    .about-subtitle {
-        font-size: 1.1rem;
-    }
-    .section-heading h2 {
-        font-size: 1.4rem;
-    }
-    .section-heading p {
-        font-size: 0.85rem;
-    }
-    .experience-badge {
-        width: 70px;
-        height: 70px;
-    }
-    .experience-years {
-        font-size: 1.4rem;
-    }
-    .experience-text {
-        font-size: 0.6rem;
-    }
-    /* Уменьшаем размеры элементов в карточке преимуществ */
-    .advantages-card .card-header h3 {
-        font-size: 1.1rem;
-    }
-    .advantage-item {
-        margin-bottom: 22px;
-    }
-    .advantage-icon {
-        width: 75px;
-        height: 75px;
-        font-size: 1.8rem;
-        margin-right: 8px;
-    }
-    .advantage-content h4 {
-        font-size: 1.4rem;
-        margin-bottom: 2px;
-    }
-    .advantage-content p {
-        font-size: 1.3rem;
-        line-height: 1.2;
-    }
-    /* Уменьшаем отступы внутри карточек */
-    .about-card {
-        padding: 12px;
-        margin-bottom: 15px;
-    }
-    .card-header {
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    .card-header .icon-wrap {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-        margin-right: 8px;
-    }
-    .card-header h3 {
-        font-size: 1rem;
-    }
-    /* Адаптация для блока CTA */
-    .about-cta {
-        padding: 15px 10px !important;
-    }
-    .about-cta h3 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-    }
-    .about-cta p {
-        font-size: 0.75rem;
-        margin-bottom: 10px;
-    }
-    .btn-cta {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-    .advantages-grid {
-        gap: 5px;
-    }
-    .advantage-item {
-        padding: 8px;
-        margin-bottom: 5px;
-    }
-    .advantage-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.75rem;
-        margin-right: 5px;
-    }
-    .advantage-item h4 {
-        font-size: 0.8rem;
-        margin-bottom: 0;
-    }
-    .advantage-item p {
-        font-size: 0.7rem;
-        line-height: 1.1;
-    }
-    /* Другие элементы страницы */
-    .service-item {
-        padding: 10px;
-    }
-    .service-item__title {
-        font-size: 0.9rem;
-    }
-    .service-item__description {
-        font-size: 0.75rem;
-    }
-    .process-item {
-        padding: 10px;
-    }
-    .process-item__title {
-        font-size: 0.8rem;
-    }
-    .process-item__number {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
-    }
-}
-
-
-/* Очень маленькие экраны (320) */
-
-@media (max-width: 320px) {
-    html,
-    body {
-        font-size: 13px;
-    }
-    section {
-        padding: 30px 0;
-    }
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .hero {
-        padding: 100px 0 70px;
-    }
-    .hero__title {
-        font-size: 1.5rem;
-    }
-    .hero__subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-    .hero__messenger-link {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    .btn {
-        padding: 6px 15px;
-        font-size: 0.8rem;
-    }
-    .btn-lg {
-        padding: 8px 20px;
-        font-size: 0.8rem;
-    }
-    section {
-        padding: 40px 0;
-    }
-    .about-subtitle {
-        font-size: 1.1rem;
-    }
-    .section-heading h2 {
-        font-size: 1.4rem;
-    }
-    .section-heading p {
-        font-size: 0.85rem;
-    }
-    .experience-badge {
-        width: 70px;
-        height: 70px;
-    }
-    .experience-years {
-        font-size: 1.4rem;
-    }
-    .experience-text {
-        font-size: 0.6rem;
-    }
-    /* Уменьшаем размеры элементов в карточке преимуществ */
-    .advantages-card .card-header h3 {
-        font-size: 1.1rem;
-    }
-    .advantage-item {
-        margin-bottom: 12px;
-    }
-    .advantage-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-        margin-right: 8px;
-    }
-    .advantage-content h4 {
-        font-size: 0.9rem;
-        margin-bottom: 2px;
-    }
-    .advantage-content p {
-        font-size: 0.75rem;
-        line-height: 1.2;
-    }
-    /* Уменьшаем отступы внутри карточек */
-    .about-card {
-        padding: 12px;
-        margin-bottom: 15px;
-    }
-    .card-header {
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    .card-header .icon-wrap {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-        margin-right: 8px;
-    }
-    .card-header h3 {
-        font-size: 1rem;
-    }
-    /* Адаптация для блока CTA */
-    .about-cta {
-        padding: 15px 10px !important;
-    }
-    .about-cta h3 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-    }
-    .about-cta p {
-        font-size: 0.75rem;
-        margin-bottom: 10px;
-    }
-    .btn-cta {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-    .advantages-grid {
-        gap: 5px;
-    }
-    .advantage-item {
-        padding: 8px;
-        margin-bottom: 5px;
-    }
-    .advantage-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.75rem;
-        margin-right: 5px;
-    }
-    .advantage-item h4 {
-        font-size: 0.8rem;
-        margin-bottom: 0;
-    }
-    .advantage-item p {
-        font-size: 0.7rem;
-        line-height: 1.1;
-    }
-    /* Другие элементы страницы */
-    .service-item {
-        padding: 10px;
-    }
-    .service-item__title {
-        font-size: 0.9rem;
-    }
-    .service-item__description {
-        font-size: 0.75rem;
-    }
-    .process-item {
-        padding: 10px;
-    }
-    .process-item__title {
-        font-size: 0.8rem;
-    }
-    .process-item__number {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
     }
 }

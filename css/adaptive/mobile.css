@@ -1,0 +1,159 @@
+/* ======================================
+   МОБИЛЬНЫЕ (576px - 767px)
+   ====================================== */
+
+@media (min-width: 576px) and (max-width: 767px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2.2rem;
+        --fs-xl: 1.8rem;
+        --fs-lg: 1.4rem;
+        --fs-md: 1.1rem;
+        --fs-sm: 0.9rem;
+        --fs-xs: 0.7rem;
+        --spacing-xxl: 2.2rem;
+        --spacing-xl: 1.8rem;
+        --spacing-lg: 1.35rem;
+        --spacing-md: 0.9rem;
+        --spacing-sm: 0.7rem;
+        --spacing-xs: 0.35rem;
+    }
+    /* Контейнер */
+    .container {
+        max-width: 540px;
+    }
+    /* Главный экран (Hero) */
+    .hero {
+        padding: 130px 0 100px;
+        min-height: auto;
+    }
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    .hero__subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        max-width: 95%;
+    }
+    .hero__cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .hero__messengers {
+        margin-top: 0;
+    }
+    .hero__image {
+        margin-top: 40px;
+        transform: perspective(1000px) rotateY(0);
+    }
+    /* Секции */
+    section {
+        padding: 60px 0;
+    }
+    /* Заголовки */
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+    .section-heading p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    /* Волны */
+    .wave-divider .wave {
+        height: 60px;
+    }
+    /* Кнопки */
+    .btn-lg {
+        padding: 10px 24px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    /* Секция о нас */
+    .about-image {
+        margin-bottom: 40px;
+    }
+    .about-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    /* Текст о компании */
+    .about-text {
+        font-size: 1rem;
+        text-align: justify;
+        hyphens: auto;
+    }
+    /* Опыт работы (бейдж) */
+    .experience-badge {
+        bottom: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    .experience-years {
+        font-size: 2rem;
+    }
+    .experience-text {
+        font-size: 0.8rem;
+    }
+    /* Преимущества */
+    .advantages {
+        margin-top: 30px;
+    }
+    .advantage-item {
+        padding: 20px;
+        margin-bottom: 20px;
+        min-height: 0;
+    }
+    .advantage-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .advantage-content p {
+        font-size: 0.9rem;
+    }
+    /* Шапка сайта */
+    .header {
+        padding: 10px 15px;
+    }
+    .header__contacts {
+        margin-right: 5px;
+    }
+    .header .phone-number {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.3px;
+    }
+    .header .phone-number i {
+        font-size: 0.8rem !important;
+        color: #ffffff !important;
+    }
+    .header .nav-link.buoy-link {
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    /* Анимации */
+    .header .buoy-link {
+        animation-duration: 2s;
+    }
+    .bubble {
+        opacity: 0.3;
+        animation-duration: 5s !important;
+    }
+    .bubble-5,
+    .bubble-6 {
+        display: none;
+    }
+}
+
+
+/* Скрываем телефон в шапке на экранах до 767px */
+
+@media (max-width: 767px) {
+    .header__contacts {
+        display: none !important;
+    }
+}

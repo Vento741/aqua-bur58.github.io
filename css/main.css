@@ -4,14 +4,55 @@
  * Импорты компонентов
  */
 
+
+/* Компоненты */
+
 @import 'components/header.css';
+
+/* Шапка */
+
 @import 'components/about.css';
+
+/* О компании */
+
 @import 'components/services.css';
+
+/* Услуги */
+
 @import 'components/process.css';
+
+/* Процесс работы */
+
 @import 'components/testimonials.css';
+
+/* Отзывы */
+
 @import 'components/faq.css';
+
+/* FAQ */
+
 @import 'components/contacts.css';
+
+/* Контакты */
+
 @import 'components/footer.css';
+
+/* Подвал */
+
+
+/* Утилиты и эффекты */
+
+@import 'animations.css';
+
+/* Анимации */
+
+
+/* Адаптивные стили */
+
+@import 'adaptive/index.css';
+
+/* Адаптивность */
+
 
 /**
  * Глобальные стили
@@ -62,9 +103,9 @@
     /* Цвета */
     --light-blue: #f5fbff;
     --mid-blue: #e1f5ff;
-    --dark-blue: #005b89;
+    --dark-blue: #009be9;
     --black: #333333;
-    --gray: #ff00ea;
+    --gray: #808080;
     --light-gray: #f3f5f7;
     /* Тени */
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -85,97 +126,6 @@
     --transition-fast: all 0.3s ease;
     --transition-normal: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     --transition-slow: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@media (max-width: 991px) {
-     :root {
-        --fs-xxl: 3rem;
-        --fs-xl: 2.25rem;
-        --fs-lg: 1.75rem;
-        --fs-md: 1.25rem;
-        --fs-sm: 1rem;
-        --fs-xs: 0.8125rem;
-        --spacing-xxl: 3rem;
-        --spacing-xl: 2.5rem;
-        --spacing-lg: 1.75rem;
-        --spacing-md: 1.25rem;
-        --spacing-sm: 0.875rem;
-        --spacing-xs: 0.4375rem;
-    }
-}
-
-@media (max-width: 767px) {
-     :root {
-        --fs-xxl: 2.5rem;
-        --fs-xl: 2rem;
-        --fs-lg: 1.5rem;
-        --fs-md: 1.125rem;
-        --fs-sm: 0.9375rem;
-        --fs-xs: 0.75rem;
-        --spacing-xxl: 2.5rem;
-        --spacing-xl: 2rem;
-        --spacing-lg: 1.5rem;
-        --spacing-md: 1rem;
-        --spacing-sm: 0.75rem;
-        --spacing-xs: 0.375rem;
-    }
-}
-
-
-/* Для средних мобильных устройств (включая 393px) */
-
-@media (min-width: 375px) and (max-width: 480px) {
-     :root {
-        --fs-xxl: 2rem;
-        --fs-xl: 1.75rem;
-        --fs-lg: 1.4rem;
-        --fs-md: 1.05rem;
-        --fs-sm: 0.875rem;
-        --fs-xs: 0.75rem;
-        --spacing-xxl: 2.2rem;
-        --spacing-xl: 1.7rem;
-        --spacing-lg: 1.3rem;
-        --spacing-md: 0.9rem;
-        --spacing-sm: 0.65rem;
-        --spacing-xs: 0.35rem;
-    }
-}
-
-
-/* Специально для экранов шириной 393px */
-
-@media (min-width: 390px) and (max-width: 394px) {
-     :root {
-        --fs-xxl: 2.1rem;
-        --fs-xl: 1.75rem;
-        --fs-lg: 1.35rem;
-        --fs-md: 1.02rem;
-        --fs-sm: 0.865rem;
-        --fs-xs: 0.73rem;
-        --spacing-xxl: 2.1rem;
-        --spacing-xl: 1.65rem;
-        --spacing-lg: 1.28rem;
-        --spacing-md: 0.88rem;
-        --spacing-sm: 0.63rem;
-        --spacing-xs: 0.33rem;
-    }
-}
-
-@media (max-width: 374px) {
-     :root {
-        --fs-xxl: 1.75rem;
-        --fs-xl: 1.5rem;
-        --fs-lg: 1.25rem;
-        --fs-md: 1rem;
-        --fs-sm: 0.875rem;
-        --fs-xs: 0.75rem;
-        --spacing-xxl: 2rem;
-        --spacing-xl: 1.5rem;
-        --spacing-lg: 1.25rem;
-        --spacing-md: 0.875rem;
-        --spacing-sm: 0.625rem;
-        --spacing-xs: 0.3125rem;
-    }
 }
 
 
@@ -274,66 +224,35 @@ section {
 }
 
 .section-heading p {
-    max-width: 800px;
-    margin: 0 auto;
+    /* max-width: 1000px; */
+    margin: auto;
     font-size: 1.15rem;
-    color: var(--gray);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #2768a5f5;
     line-height: 1.8;
     padding-top: 20px;
-}
-
-
-/* Предотвращение переноса для текста на десктопах */
-
-@media (min-width: 1200px) {
-    .section-heading p {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        color: #005b89;
-        font-size: 1.2rem;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
-    }
-}
-
-
-/* Предотвращение переноса текста только для "О компании" на десктопах */
-
-@media (min-width: 1200px) {
-    #about .section-heading p {
-        white-space: nowrap;
-        max-width: 100%;
-        font-size: 1.08rem;
-    }
-    .no-wrap-desktop {
-        white-space: nowrap !important;
-        max-width: 100% !important;
-        color: #005b89 !important;
-        font-size: 1.3rem !important;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    }
 }
 
 
 /* Стили для кнопок */
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
     padding: 12px 30px;
     font-size: 1rem;
-    font-weight: 500;
+    line-height: 1.5;
     border-radius: var(--radius-md);
-    transition: var(--transition-normal);
-    border: none;
-    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-sm);
     font-family: var(--font-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
 }
 
 .btn-primary {
@@ -416,10 +335,10 @@ section {
     background: url('../images/hero-bg.jpg') center center / cover no-repeat fixed;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 
@@ -502,7 +421,7 @@ section {
 }
 
 .hero__title .location-text {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin-top: 10px;
@@ -525,6 +444,13 @@ section {
     letter-spacing: -0.2px;
     color: #ffffffd3;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Предотвращаем перенос слова "области" */
+
+.hero__subtitle .no-break-word {
+    white-space: nowrap;
 }
 
 .hero__subtitle .accent-text {
@@ -1081,36 +1007,34 @@ section {
 }
 
 .offers-card .service-list span {
-    font-weight: 500;
-    color: #005b89;
-    font-size: 0.8rem;
-    line-height: 1.1;
-}
-
-@media (min-width: 1200px) {
-    .offers-card .service-list li {
-        padding: 7px 8px;
-    }
-    .offers-card .service-list span {
-        font-size: 0.82rem;
-    }
+    color: var(--dark-blue);
+    margin-left: 2px;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 
 /* Сетка преимуществ */
 
 .advantages-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .advantages-card .advantage-item {
-    background: linear-gradient(to right, rgba(240, 249, 255, 0.5), rgba(225, 245, 255, 0.5));
-    border-radius: 10px;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 6px;
+    background-color: #fff;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 149, 235, 0.1);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .advantages-card .advantage-item:hover {
@@ -1120,39 +1044,42 @@ section {
 }
 
 .advantages-card .advantage-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #f0f9ff, #e0f3ff);
     display: flex;
     justify-content: center;
     align-items: center;
     color: #0095eb;
-    font-size: 1.1rem;
-    margin: 0 auto 5px;
+    font-size: 1rem;
+    margin: 0 auto 6px;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 149, 235, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 149, 235, 0.1);
 }
 
 .advantages-card .advantage-item:hover .advantage-icon {
     background: linear-gradient(135deg, #0095eb, #00c3ff);
     color: white;
     transform: rotate(15deg);
-    box-shadow: 0 8px 20px rgba(0, 149, 235, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 149, 235, 0.2);
 }
 
 .advantages-card h4 {
-    font-size: 1rem;
-    margin-bottom: 3px;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
     color: #005b89;
     font-weight: 600;
+    line-height: 1.2;
+    width: 100%;
 }
 
 .advantages-card p {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin-bottom: 0;
     color: #555;
-    line-height: 1.3;
+    line-height: 1.2;
+    width: 100%;
 }
 
 
@@ -1231,7 +1158,8 @@ section {
 }
 
 .btn-cta i {
-    font-size: 1rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
 }
 
 
@@ -1245,100 +1173,17 @@ section {
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
-    z-index: 3;
 }
 
 .section-divider svg {
     position: relative;
     display: block;
-    width: calc(120% + 1.3px);
+    width: calc(100% + 1.3px);
     height: 80px;
-    transform: rotateY(180deg);
 }
 
 .section-divider .divider-fill {
-    fill: #FFFFFF;
-}
-
-
-/* Изменение ширины колонок для карточек */
-
-@media (min-width: 992px) {
-    .about-content-wrapper .row {
-        margin-left: -10px;
-        margin-right: -10px;
-    }
-    .about-content-wrapper .col-lg-4 {
-        padding-left: 10px;
-        padding-right: 10px;
-        max-width: 33.33%;
-        flex: 0 0 33.33%;
-    }
-    /* Контейнер с увеличенной шириной для десктопов */
-    .about .container {
-        max-width: 1500px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    /* Уменьшение вертикальных отступов секции about */
-    .about {
-        padding: 70px 0 130px;
-    }
-    /* Сокращение вертикального расстояния между секцией и CTA блоком */
-    .about-cta-wrapper {
-        margin-top: 30px !important;
-    }
-}
-
-
-/* Медиа-запросы для адаптивности */
-
-@media (max-width: 991px) {
-    .about {
-        padding: 70px 0 130px;
-    }
-    .experience-badge {
-        width: 80px;
-        height: 80px;
-    }
-    .experience-years {
-        font-size: 1.8rem;
-    }
-    .experience-text {
-        font-size: 0.7rem;
-    }
-    .about-cta h3 {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .about {
-        padding: 50px 0 120px;
-    }
-    .section-divider svg {
-        height: 60px;
-    }
-    .about-card {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 575px) {
-    .feature-tag {
-        font-size: 0.7rem;
-        padding: 4px 8px;
-    }
-    .about-cta h3 {
-        font-size: 1.2rem;
-    }
-    .about-cta p {
-        font-size: 0.9rem;
-    }
-    .btn-cta {
-        padding: 10px 20px;
-        font-size: 0.8rem;
-    }
+    fill: var(--light-blue);
 }
 
 
@@ -1352,19 +1197,6 @@ section {
     z-index: 5;
     margin-top: -30px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(225, 245, 255, 0.3));
-}
-
-
-/* Специальные стили для волны на экранах 393px */
-
-@media (min-width: 390px) and (max-width: 394px) {
-    .wave-separator {
-        margin-top: -5px;
-        height: 80px;
-    }
-    .wave-animation {
-        height: 60px;
-    }
 }
 
 .wave-top-line {
@@ -1458,26 +1290,18 @@ section {
     color: #343a40;
 }
 
-@media (max-width: 767px) {
-    .toast {
-        bottom: 20px;
-        right: 20px;
-        left: 20px;
-        text-align: center;
-    }
-}
-
 
 /* Световые эффекты для секций */
 
 .light-effect {
     position: absolute;
+    width: 10vw;
+    height: 10vw;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
-    filter: blur(30px);
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: 1;
+    background: linear-gradient(45deg, rgba(0, 149, 235, 0.1), rgba(0, 149, 235, 0.05));
+    filter: blur(20px);
+    z-index: 0;
+    animation: lightPulse 4s infinite ease-in-out alternate;
 }
 
 .light-effect-1 {
@@ -1548,8 +1372,8 @@ section {
 
 .scroll-to-top {
     position: fixed;
-    bottom: 24px;
-    right: 115px;
+    bottom: 90px;
+    right: 25px;
     width: 50px;
     height: 50px;
     background-color: var(--primary-color);
@@ -1596,8 +1420,8 @@ section {
 
 .call-button-wrapper {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 }
 
 .call-button-link {
@@ -1617,13 +1441,13 @@ section {
 }
 
 .call-button-link:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     color: #fff;
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
 .call-button-link i {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
 }
 
 .call-button-ripple {
@@ -1645,11 +1469,86 @@ section {
         opacity: 0.5;
     }
     50% {
-        transform: scale(1.5);
+        transform: scale(1.3);
         opacity: 0.3;
     }
     100% {
-        transform: scale(1.8);
+        transform: scale(1.5);
         opacity: 0;
+    }
+}
+
+
+/* Стили для динамически меняющегося текста */
+
+#dynamic-text {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.5s ease, color 0.5s ease, transform 0.5s ease;
+    font-weight: 600;
+    position: relative;
+    padding: 0 5px;
+    animation: textColorPulse 4s infinite;
+    text-shadow: 0 0 10px rgba(211, 239, 255, 0.2);
+    transform: translateY(0);
+    overflow-wrap: break-word;
+}
+
+#dynamic-text::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #e8e9e9, transparent);
+    animation: lineWidth 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes textColorPulse {
+    0% {
+        color: #d8f1ff;
+    }
+    25% {
+        color: #ffffff;
+    }
+    50% {
+        color: #d0efff;
+    }
+    75% {
+        color: #ffffff;
+    }
+    100% {
+        color: #d8f1ff;
+    }
+}
+
+@keyframes lineWidth {
+    0% {
+        width: 0;
+        left: 0;
+        opacity: 0.4;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+        opacity: 0.4;
     }
 }

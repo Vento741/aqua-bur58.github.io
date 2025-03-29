@@ -1,0 +1,357 @@
+/* ======================================
+   ДРУГИЕ СПЕЦИАЛЬНЫЕ МЕДИА-ЗАПРОСЫ
+   ====================================== */
+
+
+/* Средние мобильные устройства (430px-480px) */
+
+@media (min-width: 430px) and (max-width: 480px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2rem;
+        --fs-xl: 1.75rem;
+        --fs-lg: 1.4rem;
+        --fs-md: 1.05rem;
+        --fs-sm: 0.875rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2.2rem;
+        --spacing-xl: 1.7rem;
+        --spacing-lg: 1.3rem;
+        --spacing-md: 0.9rem;
+        --spacing-sm: 0.65rem;
+        --spacing-xs: 0.35rem;
+    }
+    html,
+    body {
+        font-size: 13.5px;
+    }
+    /* Главный экран (Hero) */
+    .hero {
+        padding: 110px 0 75px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .hero__title {
+        font-size: 3.0rem;
+    }
+    .hero__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+    }
+    .hero__features {
+        margin-top: 18rem !important;
+        margin-bottom: 0.5rem;
+    }
+    /* Кнопки */
+    .btn {
+        padding: 8px 20px;
+        font-size: 1.7rem;
+    }
+    .btn-lg {
+        padding: 5px 20px;
+        font-size: 1.7rem;
+    }
+    /* Волны */
+    .wave-separator {
+        margin-top: -45px;
+    }
+    .wave-separator .wave-animation {
+        height: 50px;
+    }
+    /* Стили хедера из file_context_0 */
+    .header {
+        padding: 8px 10px;
+    }
+    .header .logo {
+        height: 50px;
+        margin-left: -10px;
+    }
+    .header.scrolled .logo {
+        height: 35px;
+        margin-left: -10px;
+    }
+    .header .navbar-toggler {
+        font-size: 1rem;
+        padding: 4px 6px;
+        z-index: 1100;
+    }
+    .header.scrolled .navbar-toggler {
+        font-size: 0.7rem;
+        padding: 4px 6px;
+    }
+    /* Скрываем телефон на мобильных устройствах */
+    .header .phone-number {
+        display: none !important;
+    }
+    .header__contacts {
+        display: none !important;
+    }
+    .header .phone-number i {
+        font-size: 0.9rem !important;
+    }
+    .header.scrolled {
+        padding: 5px 8px;
+    }
+    .header .navbar-brand {
+        max-width: 120px;
+    }
+    .header .navbar-collapse {
+        padding: 8px;
+        margin-top: 8px;
+        border-radius: 8px;
+        z-index: 1040;
+    }
+    .hero__title .highlight-text {
+        font-size: 3.0rem;
+    }
+}
+
+@media (min-width: 395px) and (max-width: 429px) {
+    .hero__title .highlight-text {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* Специально для Android-устройств с экраном 393px */
+
+@media (min-width: 390px) and (max-width: 394px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2.1rem;
+        --fs-xl: 1.75rem;
+        --fs-lg: 1.35rem;
+        --fs-md: 1.02rem;
+        --fs-sm: 0.865rem;
+        --fs-xs: 0.73rem;
+        --spacing-xxl: 2.1rem;
+        --spacing-xl: 1.65rem;
+        --spacing-lg: 1.28rem;
+        --spacing-md: 0.88rem;
+        --spacing-sm: 0.63rem;
+        --spacing-xs: 0.33rem;
+    }
+    html,
+    body {
+        font-size: 13.5px;
+    }
+    /* Контейнер */
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    /* Хедер */
+    .header {
+        padding: 8px 10px;
+    }
+    .header .logo {
+        height: 40px;
+        margin-left: -60px;
+    }
+    .header .navbar-brand .logo {
+        margin-left: -60px;
+    }
+    .header.scrolled .logo {
+        height: 35px;
+        margin-left: -60px;
+    }
+    .header .navbar-toggler {
+        font-size: 1rem;
+        padding: 4px 6px;
+    }
+    .header.scrolled .navbar-toggler {
+        font-size: 0.7rem;
+        padding: 4px 6px;
+    }
+    /* Скрываем телефон на мобильных устройствах */
+    .header .phone-number {
+        display: none !important;
+    }
+    .header__contacts {
+        display: none !important;
+    }
+    .header .phone-number i {
+        font-size: 0.9rem !important;
+    }
+    .header.scrolled {
+        padding: 5px 8px;
+    }
+    .header .navbar-brand {
+        max-width: 120px;
+    }
+    .header .navbar-collapse {
+        padding: 8px;
+        margin-top: 8px;
+        border-radius: 8px;
+    }
+    /* Главный экран */
+    .hero {
+        padding: 105px 0 30px;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .hero .container {
+        max-width: 95%;
+        width: 95%;
+    }
+    .hero__title .highlight-text {
+        font-size: 2.7rem;
+    }
+    .hero__title {
+        font-size: 3.0rem;
+        margin-bottom: -10px;
+    }
+    .hero__title .location-text {
+        font-size: 1.5rem;
+    }
+    /* Волны */
+    .wave-separator {
+        margin-top: -55px;
+    }
+    .wave-separator .wave-animation {
+        height: 35px;
+        margin-top: -10px;
+    }
+}
+
+
+/* Высокие устройства с маленьким экраном */
+
+@media (max-height: 700px) and (max-width: 575px) {
+    .hero {
+        padding: 90px 0 60px;
+    }
+    .hero__title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    .hero__cta {
+        margin-bottom: 15px;
+    }
+    .scroll-down {
+        bottom: 10px;
+    }
+}
+
+
+/* Темная тема */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --dark-blue: #0095eb;
+        --black: #e1e1e1;
+        --gray: #aaaaaa;
+        --light-gray: #1a1a1a;
+        --white: #1a1a1a;
+        --light-blue: #121824;
+        --mid-blue: #192236;
+    }
+    .wave-divider .wave path {
+        fill: var(--light-blue);
+    }
+    .hero__messenger-link {
+        background-color: var(--light-gray);
+    }
+    .advantage-icon {
+        background-color: var(--mid-blue);
+    }
+    .experience-badge {
+        background-color: var(--secondary-color);
+    }
+    .bubble {
+        background: rgba(33, 150, 243, 0.05);
+        box-shadow: inset 0 0 10px rgba(3, 169, 244, 0.5);
+    }
+}
+
+
+/* Версия для печати */
+
+@media print {
+    .wave-divider,
+    .preloader,
+    .call-btn-fixed,
+    .hero__messengers,
+    .scroll-down,
+    .hero__bubbles {
+        display: none !important;
+    }
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background-color: #fff;
+    }
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    section {
+        page-break-inside: avoid;
+        padding: 15px 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        color: #000;
+    }
+    img {
+        page-break-inside: avoid;
+        max-width: 100% !important;
+    }
+    .btn {
+        display: none;
+    }
+    .hero {
+        padding: 20px 0;
+        min-height: auto;
+    }
+    .about-image {
+        border: 1px solid #ddd;
+    }
+    .advantage-icon {
+        border: 1px solid #000;
+        color: #000;
+    }
+}
+
+
+/* ======================================
+   УТИЛИТЫ
+   ====================================== */
+
+
+/* Белый цвет для цифр телефона в мобильной версии */
+
+.header .phone-digits {
+    color: #ffffff !important;
+}
+
+
+/* Toast-уведомления для мобильных */
+
+@media (max-width: 767px) {
+    .toast {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}

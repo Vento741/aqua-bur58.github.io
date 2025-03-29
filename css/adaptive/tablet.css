@@ -1,0 +1,104 @@
+/* ======================================
+   ПЛАНШЕТЫ (768px - 991px)
+   ====================================== */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2.5rem;
+        --fs-xl: 2rem;
+        --fs-lg: 1.5rem;
+        --fs-md: 1.125rem;
+        --fs-sm: 0.9375rem;
+        --fs-xs: 0.75rem;
+        --spacing-xxl: 2.5rem;
+        --spacing-xl: 2rem;
+        --spacing-lg: 1.5rem;
+        --spacing-md: 1rem;
+        --spacing-sm: 0.75rem;
+        --spacing-xs: 0.375rem;
+    }
+    /* Контейнер */
+    .container {
+        max-width: 720px;
+    }
+    /* Главный экран (Hero) */
+    .hero {
+        padding: 120px 0 80px;
+        min-height: auto;
+    }
+    .hero__title {
+        font-size: 2.8rem;
+    }
+    .hero__subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+        max-width: 95%;
+    }
+    .hero__cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .hero__messengers {
+        margin-top: 0;
+    }
+    .hero__image {
+        margin-top: 40px;
+        transform: perspective(1000px) rotateY(0);
+    }
+    /* Секции */
+    section {
+        padding: 70px 0;
+    }
+    /* Заголовки */
+    .section-heading h2 {
+        font-size: 2.2rem;
+    }
+    .section-heading p {
+        font-size: 1.1rem;
+    }
+    /* Волны */
+    .wave-divider .wave {
+        height: 60px;
+    }
+    /* Секция о нас */
+    .about {
+        padding: 50px 0 120px;
+    }
+    .about-image {
+        margin-bottom: 50px;
+    }
+    .about-subtitle {
+        font-size: 1.6rem;
+    }
+    .about-text {
+        font-size: 1rem;
+    }
+    /* Опыт работы (бейдж) */
+    .experience-badge {
+        bottom: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    .experience-years {
+        font-size: 2rem;
+    }
+    .experience-text {
+        font-size: 0.8rem;
+    }
+    /* Кнопки */
+    .btn-lg {
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+    /* CTA блок */
+    .about-cta h3 {
+        font-size: 1.4rem;
+    }
+    /* Разделители секций */
+    .section-divider svg {
+        height: 60px;
+    }
+}

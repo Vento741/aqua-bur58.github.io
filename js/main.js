@@ -3,28 +3,49 @@
  * Файл: js/main.js
  */
 
-// Инициализация основных функций сайта
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM загружен, инициализируем функции');
-
-    // Инициализируем компоненты напрямую
-    // Проверяем, доступны ли функции в глобальном контексте
-    if (typeof initAnimations === 'function') initAnimations();
-    if (typeof initWaveEffects === 'function') initWaveEffects();
-    if (typeof initMobileMenu === 'function') initMobileMenu();
-    if (typeof initScrollSpy === 'function') initScrollSpy();
-    if (typeof initBackToTop === 'function') initBackToTop();
-    if (typeof initPreloader === 'function') initPreloader();
-    if (typeof initLazyImages === 'function') initLazyImages();
-    if (typeof initServiceFilters === 'function') initServiceFilters();
-    if (typeof initTestimonialsSlider === 'function') initTestimonialsSlider();
-    if (typeof initFaqAccordion === 'function') initFaqAccordion();
-    if (typeof initContactForm === 'function') initContactForm();
-    if (typeof initFixedHeader === 'function') initFixedHeader();
-    if (typeof initNewsletterForm === 'function') initNewsletterForm();
-
-    // Анимация волн в футере
+/**
+ * Инициализация при загрузке DOM
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация основных функций
+    initMobileMenu();
+    initScrollSpy();
+    initBackToTop();
+    initPreloader();
+    initLazyImages();
+    initServiceFilters();
+    initServiceCardEffects();
+    initTestimonialsSlider();
+    initFaqAccordion();
+    initContactForm();
+    initNewsletterForm();
     initFooterWaves();
+
+    // Дополнительная проверка для уверенности, что бургер-меню правильно отображается
+    const menuToggle = document.querySelector('.navbar-toggler');
+    const mobileMenu = document.querySelector('.navbar-collapse');
+
+    if (menuToggle && mobileMenu) {
+        // Проверка при загрузке страницы
+        if (window.innerWidth >= 1300) {
+            menuToggle.style.display = 'none';
+            mobileMenu.classList.remove('show');
+            mobileMenu.style.display = 'flex';
+        } else {
+            menuToggle.style.display = 'block';
+            // Не меняем отображение меню, т.к. по умолчанию оно скрыто
+        }
+
+        // И еще одна проверка через небольшую задержку (для уверенности)
+        setTimeout(() => {
+            if (window.innerWidth >= 1300) {
+                menuToggle.style.display = 'none';
+                mobileMenu.style.display = 'flex';
+            } else {
+                menuToggle.style.display = 'block';
+            }
+        }, 100);
+    }
 });
 
 /**
@@ -52,9 +73,82 @@ function initMobileMenu() {
 
     if (!menuToggle || !mobileMenu) return;
 
+    // Функция для проверки нужно ли показывать бургер-меню
+    function updateMenuBasedOnScreenSize() {
+        const shouldShowBurger = window.innerWidth < 1300;
+
+        // Активирующая функция для поддержки бургера на экранах до 1300px
+        if (shouldShowBurger) {
+            menuToggle.style.display = 'block';
+            document.body.classList.add('burger-active');
+
+            // Сбрасываем CSS-правило в случае, если оно было переопределено !important
+            if (window.innerWidth < 1300) {
+                setTimeout(() => {
+                    menuToggle.style.display = 'block';
+                }, 50);
+            }
+        } else {
+            menuToggle.style.display = 'none';
+            document.body.classList.remove('burger-active');
+
+            // Обеспечиваем видимость меню на больших экранах
+            if (window.innerWidth >= 1300) {
+                mobileMenu.classList.remove('show');
+                mobileMenu.style.display = 'flex';
+            }
+        }
+    }
+
+    // Вызываем функцию при загрузке
+    updateMenuBasedOnScreenSize();
+
+    // Слушаем изменение размеров окна
+    window.addEventListener('resize', updateMenuBasedOnScreenSize);
+
+    // Функция для установки z-index на узких экранах
+    function updateMenuOnNarrowDevices() {
+        const isNarrowDevice = window.innerWidth <= 320;
+
+        if (isNarrowDevice) {
+            // Для узких устройств повышаем z-index программно
+            menuToggle.style.zIndex = "1100";
+            mobileMenu.style.zIndex = "1090";
+
+            // Также добавляем специальный класс для дополнительных стилей
+            document.body.classList.add('narrow-device');
+        } else {
+            // Сбрасываем inline-стили для нормальных экранов
+            if (window.innerWidth > 320) {
+                document.body.classList.remove('narrow-device');
+            }
+        }
+    }
+
+    // Вызываем функцию при загрузке
+    updateMenuOnNarrowDevices();
+
+    // Слушаем изменение размеров окна
+    window.addEventListener('resize', updateMenuOnNarrowDevices);
+
     // Обработчики событий
     menuToggle.addEventListener('click', () => {
         document.body.classList.toggle('menu-open');
+
+        // Дополнительная проверка для узких устройств
+        if (window.innerWidth <= 320) {
+            if (mobileMenu.classList.contains('show')) {
+                // Меню открыто
+                mobileMenu.style.display = 'block';
+            } else {
+                // Таймаут для анимации
+                setTimeout(() => {
+                    if (!mobileMenu.classList.contains('show')) {
+                        mobileMenu.style.display = '';
+                    }
+                }, 300);
+            }
+        }
     });
 
     // Закрытие меню при клике на ссылку
@@ -637,33 +731,78 @@ function initContactForm() {
             submitButton.disabled = true;
             submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Отправка...';
 
-            // Имитация задержки отправки
-            setTimeout(() => {
-                const formData = new FormData(contactForm);
-                const formValues = {};
+            // Собираем данные формы
+            const formData = new FormData(contactForm);
+            const formValues = {};
 
-                // Собираем данные формы для отображения в сообщении
-                formData.forEach((value, key) => {
-                    formValues[key] = value;
-                });
+            // Собираем данные формы для отображения в сообщении и отправки
+            formData.forEach((value, key) => {
+                formValues[key] = value;
+            });
 
-                // Показать сообщение об успешной отправке
-                showFormSuccess(formValues);
+            // Номер телефона для WhatsApp (без +)
+            const whatsappNumber = '79921110999'; // Заменить на ваш номер WhatsApp
 
-                // Сбрасываем форму и стили валидации
-                contactForm.reset();
-                inputs.forEach(input => {
-                    input.classList.remove('is-valid');
-                    if (input.tagName === 'SELECT') {
-                        // Для селектов нужно сбросить на первый option
-                        input.selectedIndex = 0;
-                    }
-                });
+            // Создаем текст сообщения для WhatsApp
+            let messageText = 'Заявка с сайта Аква-Бур58\n\n';
+            messageText += `👤 Имя: ${formValues.name || 'Не указано'}\n`;
+            messageText += `📞 Телефон: ${formValues.phone || 'Не указано'}\n`;
 
-                // Восстанавливаем кнопку отправки
-                submitButton.disabled = false;
-                submitButton.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Отправить заявку';
-            }, 1500);
+            // Добавляем название услуги, если выбрана
+            if (formValues.serviceType) {
+                let serviceName = '';
+                switch (formValues.serviceType) {
+                    case 'drilling':
+                        serviceName = 'Бурение скважины';
+                        break;
+                    case 'abyssin':
+                        serviceName = 'Абиссинская скважина';
+                        break;
+                    case 'equipment':
+                        serviceName = 'Обустройство скважины';
+                        break;
+                    case 'repair':
+                        serviceName = 'Ремонт скважины';
+                        break;
+                    case 'other':
+                        serviceName = 'Другое';
+                        break;
+                    default:
+                        serviceName = 'Не указана';
+                }
+                messageText += `🔧 Услуга: ${serviceName}\n`;
+            }
+
+            // Добавляем сообщение, если оно есть
+            if (formValues.message) {
+                messageText += `💬 Сообщение: ${formValues.message}\n`;
+            }
+
+            // Кодируем сообщение для URL
+            const encodedMessage = encodeURIComponent(messageText);
+
+            // Формируем ссылку для WhatsApp
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Показать сообщение об успешной отправке
+            showFormSuccess(formValues);
+
+            // Открываем WhatsApp в новом окне
+            window.open(whatsappUrl, '_blank');
+
+            // Сбрасываем форму и стили валидации
+            contactForm.reset();
+            inputs.forEach(input => {
+                input.classList.remove('is-invalid', 'is-valid');
+                if (input.tagName === 'SELECT') {
+                    // Для селектов нужно сбросить на первый option
+                    input.selectedIndex = 0;
+                }
+            });
+
+            // Восстанавливаем кнопку отправки
+            submitButton.disabled = false;
+            submitButton.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Отправить заявку';
         }
     });
 
@@ -888,3 +1027,47 @@ function isElementInViewport(el) {
         rect.bottom >= 0
     );
 }
+
+// Скрипт для динамически меняющегося текста
+document.addEventListener('DOMContentLoaded', function() {
+    const dynamicText = document.getElementById('dynamic-text');
+    if (!dynamicText) return;
+
+    const phrases = [
+        'с гарантией качества более 15 лет',
+        'чистая вода на вашем участке уже завтра',
+        'работаем быстро, качественно, с гарантией',
+        'современное оборудование и опытные мастера',
+        'собственный парк буровой техники',
+        'без посредников – напрямую от бурильщиков',
+        'водоснабжение под ключ с любой глубины',
+        'бурим скважины любой сложности круглый год'
+    ];
+
+    let currentIndex = 0;
+
+    // Функция для анимированной смены текста
+    function changeText() {
+        // Сначала исчезновение
+        dynamicText.style.opacity = '0';
+        dynamicText.style.transform = 'translateY(10px)';
+
+        setTimeout(() => {
+            dynamicText.textContent = phrases[currentIndex];
+
+            // Затем появление с эффектом
+            setTimeout(() => {
+                dynamicText.style.opacity = '1';
+                dynamicText.style.transform = 'translateY(0)';
+
+                currentIndex = (currentIndex + 1) % phrases.length;
+            }, 50);
+        }, 500);
+    }
+
+    // Инициализация первой фразы
+    dynamicText.textContent = phrases[0];
+
+    // Запускаем смену фраз каждые 5 секунд
+    setInterval(changeText, 5000);
+});
