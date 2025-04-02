@@ -100,3 +100,5 @@
 При возникновении вопросов о проекте обращайтесь:
 - Email: your-email@example.com
 - Телефон: +7 (XXX) XXX-XX-XX 
+
+xn---58-5cdahe7dyc3a.xn--p1ai

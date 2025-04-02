@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+
+Sitemap: https://аква-бур58.рф/sitemap.xml
+
+Host: аква-бур58.рф 

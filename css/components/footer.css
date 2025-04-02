@@ -299,6 +299,12 @@
     transition: all 0.3s;
 }
 
+.footer-policy a.active {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .footer-policy a:hover {
     color: #fff;
     text-decoration: underline;
