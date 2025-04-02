@@ -1,17 +1,7 @@
-# Перенаправление с HTTP на HTTPS
+# Минимальный вариант настройки .htaccess
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Перенаправление с www на без www
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
-
-# 301 редирект со старого домена, если есть
-# RewriteCond %{HTTP_HOST} ^старыйдомен\.ru$ [NC]
-# RewriteRule ^(.*)$ https://аква-бур58.рф/$1 [L,R=301]
-
-# Перенаправление index.html на корень
+# Только перенаправление index.html на корень
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
 RewriteRule ^index\.html$ / [R=301,L]
 
@@ -50,10 +40,5 @@ RewriteRule ^index\.html$ / [R=301,L]
   AddOutputFilterByType DEFLATE application/json
 </IfModule>
 
-# Защита от хотлинкинга (опционально)
-# RewriteCond %{HTTP_REFERER} !^$
-# RewriteCond %{HTTP_REFERER} !^https://(www\.)?аква-бур58\.рф/.*$ [NC]
-# RewriteRule \.(jpg|jpeg|png|gif)$ - [F]
-
 # Установка дефолтной страницы 404
-ErrorDocument 404 /404.html 
+ErrorDocument 404 /404.html

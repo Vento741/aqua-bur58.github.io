@@ -7,6 +7,9 @@
  * Инициализация при загрузке DOM
  */
 document.addEventListener('DOMContentLoaded', function() {
+    // Определение устройств iOS и добавление класса
+    detectiOSDevices();
+
     // Инициализация основных функций
     initMobileMenu();
     initScrollSpy();
@@ -47,6 +50,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 });
+
+/**
+ * Определение устройств iOS и добавление специального класса
+ */
+function detectiOSDevices() {
+    // Проверка на iOS устройство
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (isIOS) {
+        // Добавляем класс для iOS устройств
+        document.body.classList.add('ios-device');
+        console.log('iOS устройство обнаружено, применены специальные стили');
+    }
+}
 
 /**
  * Инициализация анимаций на странице
