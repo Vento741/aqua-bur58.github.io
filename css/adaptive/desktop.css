@@ -11,6 +11,11 @@
     .hero__title {
         font-size: 6rem;
     }
+    /* Увеличиваем размер текста "Бурение скважин" */
+    .hero__title .highlight-text {
+        font-size: 6.5rem;
+        text-shadow: 0 0 20px rgba(0, 195, 255, 0.6);
+    }
     .hero__subtitle {
         font-size: 1.9rem;
         max-width: 95%;
@@ -119,6 +124,11 @@
    ====================================== */
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    /* Увеличиваем размер текста "Бурение скважин" */
+    .hero__title .highlight-text {
+        font-size: 3.8rem;
+        text-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+    }
     /* Объединение текста "Профессиональное бурение скважин в Пензе и области" в одну строку */
     .hero__subtitle .accent-text+br {
         display: none;
