@@ -1,57 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Главная страница -->
   <url>
     <loc>https://аква-бур58.рф/</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/logo.svg</image:loc>
+      <image:title>Аква-Бур58 - Бурение скважин в Пензе</image:title>
+      <image:caption>Логотип компании по бурению скважин в Пензе</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/hero-bg.jpg</image:loc>
+      <image:title>Бурение скважин на воду в Пензе</image:title>
+      <image:caption>Профессиональное оборудование для бурения скважин</image:caption>
+    </image:image>
   </url>
+  
+  <!-- Страницы услуг -->
   <url>
     <loc>https://аква-бур58.рф/services/abyssinskaya.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/abyssinskaya-main.jpg</image:loc>
+      <image:title>Абиссинская скважина в Пензе</image:title>
+      <image:caption>Бурение абиссинской скважины в Пензенской области</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://аква-бур58.рф/services/portable.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/portable-main.jpg</image:loc>
+      <image:title>Бурение переносными установками в Пензе</image:title>
+      <image:caption>Мобильная установка для бурения в труднодоступных местах</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://аква-бур58.рф/services/equipment.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/equipment-main.jpg</image:loc>
+      <image:title>Водоподъемное оборудование для скважин в Пензе</image:title>
+      <image:caption>Насосное оборудование для водоснабжения частного дома</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://аква-бур58.рф/services/maintenance.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/maintenance-main.jpg</image:loc>
+      <image:title>Обслуживание и ремонт скважин в Пензе</image:title>
+      <image:caption>Профессиональное обслуживание скважин на воду</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://аква-бур58.рф/services/consultation.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/consultation-main.jpg</image:loc>
+      <image:title>Консультации по водоснабжению в Пензе</image:title>
+      <image:caption>Анализ воды и консультации специалистов</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://аква-бур58.рф/services/turnkey.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/turnkey-main.jpg</image:loc>
+      <image:title>Скважина под ключ в Пензе</image:title>
+      <image:caption>Комплексное решение для водоснабжения дома</image:caption>
+    </image:image>
   </url>
+  
+  <!-- Правовые страницы -->
   <url>
     <loc>https://аква-бур58.рф/terms.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  
   <url>
     <loc>https://аква-бур58.рф/privacy-policy.html</loc>
-    <lastmod>2025-04-02</lastmod>
+    <lastmod>2025-04-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <!-- Страница 404 -->
+  <url>
+    <loc>https://аква-бур58.рф/404.html</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
   </url>
 </urlset> 
