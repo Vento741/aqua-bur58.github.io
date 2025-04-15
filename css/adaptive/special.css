@@ -6,80 +6,125 @@
 /* Средние мобильные устройства (430px-480px) */
 
 @media (min-width: 430px) and (max-width: 480px) {
-    /* Переменные размеров */
+    /* Переменные размеров для средних мобильных устройств */
      :root {
         --fs-xxl: 2rem;
+        /* Очень большой размер шрифта */
         --fs-xl: 1.75rem;
+        /* Большой размер шрифта */
         --fs-lg: 1.4rem;
+        /* Средне-большой размер шрифта */
         --fs-md: 1.05rem;
+        /* Средний размер шрифта */
         --fs-sm: 0.875rem;
+        /* Маленький размер шрифта */
         --fs-xs: 0.75rem;
+        /* Очень маленький размер шрифта */
         --spacing-xxl: 2.2rem;
+        /* Очень большой отступ */
         --spacing-xl: 1.7rem;
+        /* Большой отступ */
         --spacing-lg: 1.3rem;
+        /* Средне-большой отступ */
         --spacing-md: 0.9rem;
+        /* Средний отступ */
         --spacing-sm: 0.65rem;
+        /* Маленький отступ */
         --spacing-xs: 0.35rem;
+        /* Очень маленький отступ */
     }
+    /* Базовый размер шрифта для всей страницы */
     html,
     body {
         font-size: 13.5px;
     }
-    /* Главный экран (Hero) */
+    /* Главный экран (Hero) - настройки для средних мобильных устройств */
     .hero {
         padding: 110px 0 75px;
+        /* Отступы сверху и снизу */
         min-height: 100vh;
+        /* Минимальная высота на весь экран */
         display: flex;
+        /* Флекс-контейнер */
         flex-direction: column;
+        /* Элементы в столбик */
         justify-content: space-between;
+        /* Распределение пространства */
     }
     .hero__title {
         font-size: 3.0rem;
+        /* Размер заголовка */
     }
     .hero__subtitle {
         font-size: 1.2rem;
+        /* Размер подзаголовка */
         margin-bottom: 18px;
+        /* Отступ снизу */
+        font-family: 'Roboto', sans-serif;
+        /* Шрифт */
+    }
+    .hero__title .highlight-text {
+        font-size: 3.5rem !important;
+        /* Размер выделенного текста */
+        font-family: 'Roboto', sans-serif;
+        /* Шрифт */
     }
     .hero__features {
-        margin-top: 18rem !important;
         margin-bottom: 0.5rem;
+        /* Отступ снизу для блока особенностей */
     }
-    /* Кнопки */
+    /* Настройки кнопок */
     .btn {
         padding: 8px 20px;
+        /* Внутренние отступы */
         font-size: 1.7rem;
+        /* Размер шрифта */
     }
     .btn-lg {
         padding: 5px 20px;
+        /* Внутренние отступы для больших кнопок */
         font-size: 1.7rem;
+        /* Размер шрифта */
     }
-    /* Волны */
+    /* Настройки волнистого разделителя */
     .wave-separator {
         margin-top: -45px;
+        /* Отрицательный отступ для наложения */
     }
     .wave-separator .wave-animation {
         height: 50px;
+        /* Высота волны */
     }
-    /* Стили хедера из file_context_0 */
+    /* Настройки шапки сайта */
     .header {
         padding: 8px 10px;
+        /* Внутренние отступы */
     }
     .header .logo {
         height: 50px;
+        /* Высота логотипа */
         margin-left: -10px;
+        /* Отрицательный отступ слева */
     }
     .header.scrolled .logo {
         height: 35px;
+        /* Уменьшенная высота логотипа при прокрутке */
         margin-left: -10px;
+        /* Отступ слева */
     }
     .header .navbar-toggler {
         font-size: 1rem;
+        /* Размер шрифта для кнопки меню */
         padding: 4px 6px;
+        /* Внутренние отступы */
         z-index: 1100;
+        /* Порядок наложения */
     }
     .header.scrolled .navbar-toggler {
         font-size: 0.7rem;
+        /* Уменьшенный размер при прокрутке */
         padding: 4px 6px;
+        /* Внутренние отступы */
     }
     /* Скрываем телефон на мобильных устройствах */
     .header .phone-number {
@@ -98,19 +143,551 @@
         max-width: 120px;
     }
     .header .navbar-collapse {
-        padding: 8px;
+        padding: 18px;
         margin-top: 8px;
         border-radius: 8px;
         z-index: 1040;
     }
-    .hero__title .highlight-text {
-        font-size: 3.0rem;
+    /* Преимущества и предложения */
+    .section-heading {
+        margin-bottom: 10px;
+    }
+    .section-heading h2 {
+        font-size: 2.7rem;
+    }
+    .section-heading p {
+        font-size: 1.1rem;
+        font-family: 'Roboto', sans-serif;
+    }
+    .about-card {
+        padding: 16px 10px;
+        margin-bottom: 18px;
+        position: relative;
+        overflow: hidden;
+    }
+    .about-card.advantages-card {
+        padding: 14px 8px;
+    }
+    .about-card.advantages-card .advantages-grid {
+        gap: 6px;
+        display: flex;
+        flex-direction: column;
+        max-height: 110px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+    }
+    .about-card.advantages-card .advantages-grid::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 28px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+    }
+    .about-card.advantages-card .advantages-grid.expanded {
+        max-height: 500px;
+    }
+    .about-card.advantages-card .advantages-grid.expanded::after {
+        display: none;
+    }
+    .about-card.advantages-card .advantage-item {
+        padding: 9px 6px;
+        margin-bottom: 8px;
+    }
+    .about-card.advantages-card .advantage-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+    .about-card.advantages-card h4 {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+    }
+    .about-card.advantages-card p {
+        font-size: 0.8rem;
+        line-height: 1.25;
+    }
+    .card-header {
+        padding: 11px 9px;
+        margin-bottom: 11px;
+        position: relative;
+        cursor: pointer;
+    }
+    .card-header::after {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+        font-size: 0.95rem;
+    }
+    .card-header.expanded::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    .card-header h3 {
+        font-size: 1.05rem;
+    }
+    .card-header .icon-wrap {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    /* Стили для раздела "Почему выбирают наши услуги" */
+    .about-card.why-choose-us-card {
+        margin-bottom: -18px;
+    }
+    /* Стили для раздела "Мы предлагаем" */
+    .about-card.offers-card .service-list {
+        max-height: 110px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+        padding-left: 28px;
+    }
+    .about-card.offers-card .service-list::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 28px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+    }
+    .about-card.offers-card .service-list.expanded {
+        max-height: 500px;
+    }
+    .about-card.offers-card .service-list.expanded::after {
+        display: none;
+    }
+    .about-card.offers-card .service-list li {
+        padding: 5px 0;
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+    .about-card.offers-card .service-list i {
+        font-size: 0.8rem;
+        margin-right: 8px;
+    }
+    .about-card.offers-card .service-list span {
+        font-size: 0.85rem;
+        line-height: 1.25;
+    }
+    /* Адаптивные стили для карточек услуг */
+    .service-card {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 12px;
+    }
+    .service-content {
+        padding: 10px 8px;
+    }
+    .service-description {
+        display: none;
+    }
+    .service-title {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+        padding-bottom: 5px;
+    }
+    .service-features {
+        margin-top: 0;
+        margin-bottom: 6px;
+        padding-bottom: 0;
+    }
+    .feature-item {
+        padding: 2px 0;
+        margin-bottom: 2px;
+    }
+    .feature-item i {
+        font-size: 0.9rem;
+        margin-right: 3px;
+    }
+    .feature-item span {
+        font-size: 1.0rem;
+    }
+    .service-price {
+        padding: 1px 0;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .price-tag {
+        font-size: 1.3rem;
+    }
+    .price-note {
+        font-size: 0.85rem;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .service-action {
+        flex-direction: row;
+        gap: 1px;
+        padding-top: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    .btn-service {
+        padding: 5px 7px;
+        font-size: 1.0rem;
+    }
+    /* Стили для раздела "Отзывы" */
+    .btn-primary {
+        font-size: 1.0rem;
+    }
+    .btn-outline-primary {
+        font-size: 1.0rem;
+    }
+    /* Стили для контактов */
+    /* Стили для блока contact-info-content на средних мобильных устройствах */
+    .contact-info-content {
+        padding: 20px;
+    }
+    .contact-info-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+    .contact-info-text {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+    /* Прелоадер для средних мобильных устройств */
+    .preloader-glass {
+        width: 100px;
+        height: 140px;
+    }
+    .preloader-logo {
+        width: 155px;
+        height: 155px;
     }
 }
 
 @media (min-width: 395px) and (max-width: 429px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 1.9rem;
+        --fs-xl: 1.7rem;
+        --fs-lg: 1.35rem;
+        --fs-md: 1.0rem;
+        --fs-sm: 0.85rem;
+        --fs-xs: 0.73rem;
+        --spacing-xxl: 2.0rem;
+        --spacing-xl: 1.6rem;
+        --spacing-lg: 1.2rem;
+        --spacing-md: 0.85rem;
+        --spacing-sm: 0.6rem;
+        --spacing-xs: 0.3rem;
+    }
+    html,
+    body {
+        font-size: 13px;
+    }
+    /* Главный экран (Hero) */
+    .hero {
+        padding: 100px 0 70px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .hero__title {
+        font-size: 2.8rem;
+    }
+    .hero__subtitle {
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+    }
+    .hero__features {
+        margin-top: 16rem !important;
+        margin-bottom: 0.4rem;
+    }
+    /* Кнопки */
+    .btn {
+        padding: 7px 18px;
+        font-size: 1.6rem;
+    }
+    .btn-lg {
+        padding: 4px 18px;
+        font-size: 1.6rem;
+    }
+    /* Волны */
+    .wave-separator {
+        margin-top: -40px;
+    }
+    .wave-separator .wave-animation {
+        height: 45px;
+    }
+    /* Стили хедера */
+    .header {
+        padding: 7px 9px;
+    }
+    .header .logo {
+        height: 45px;
+        margin-left: -10px;
+    }
+    .header.scrolled .logo {
+        height: 32px;
+        margin-left: -10px;
+    }
+    .header .navbar-toggler {
+        font-size: 0.95rem;
+        padding: 3px 5px;
+        z-index: 1100;
+    }
+    .header.scrolled .navbar-toggler {
+        font-size: 0.65rem;
+        padding: 3px 5px;
+    }
+    /* Скрываем телефон на мобильных устройствах */
+    .header .phone-number {
+        display: none !important;
+    }
+    .header__contacts {
+        display: none !important;
+    }
+    .header .phone-number i {
+        font-size: 0.85rem !important;
+    }
+    .header.scrolled {
+        padding: 4px 7px;
+    }
+    .header .navbar-brand {
+        max-width: 110px;
+    }
+    .header .navbar-collapse {
+        padding: 7px;
+        margin-top: 7px;
+        border-radius: 7px;
+        z-index: 1040;
+    }
     .hero__title .highlight-text {
         font-size: 2.5rem;
+    }
+    /* Преимущества и предложения */
+    .section-heading {
+        margin-bottom: 9px;
+    }
+    .section-heading h2 {
+        font-size: 2.5rem;
+    }
+    .section-heading p {
+        font-size: 1.05rem;
+        font-family: 'Roboto', sans-serif;
+    }
+    .about-card {
+        padding: 14px 8px;
+        margin-bottom: 16px;
+        position: relative;
+        overflow: hidden;
+    }
+    .about-card.advantages-card {
+        padding: 12px 6px;
+    }
+    .about-card.advantages-card .advantages-grid {
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        max-height: 100px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+    }
+    .about-card.advantages-card .advantages-grid::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 25px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+    }
+    .about-card.advantages-card .advantages-grid.expanded {
+        max-height: 500px;
+    }
+    .about-card.advantages-card .advantages-grid.expanded::after {
+        display: none;
+    }
+    .about-card.advantages-card .advantage-item {
+        padding: 8px 5px;
+        margin-bottom: 7px;
+    }
+    .about-card.advantages-card .advantage-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    .about-card.advantages-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 3px;
+    }
+    .about-card.advantages-card p {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+    .card-header {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .card-header::after {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+        font-size: 0.9rem;
+    }
+    .card-header.expanded::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    .card-header h3 {
+        font-size: 1rem;
+    }
+    .card-header .icon-wrap {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+    /* Стили для раздела "Почему выбирают наши услуги" */
+    .about-card.why-choose-us-card {
+        margin-bottom: -16px;
+    }
+    /* Стили для раздела "Мы предлагаем" */
+    .about-card.offers-card .service-list {
+        max-height: 100px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+        padding-left: 25px;
+    }
+    .about-card.offers-card .service-list::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 25px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+    }
+    .about-card.offers-card .service-list.expanded {
+        max-height: 500px;
+    }
+    .about-card.offers-card .service-list.expanded::after {
+        display: none;
+    }
+    .about-card.offers-card .service-list li {
+        padding: 4px 0;
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    .about-card.offers-card .service-list i {
+        font-size: 0.75rem;
+        margin-right: 7px;
+    }
+    .about-card.offers-card .service-list span {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+    /* Адаптивные стили для карточек услуг */
+    .service-card {
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+    .service-content {
+        padding: 8px 6px;
+    }
+    .service-description {
+        display: none;
+        /* Скрываем описание на мобильных устройствах */
+    }
+    .service-title {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+        padding-bottom: 4px;
+    }
+    .service-features {
+        margin-top: 0;
+        margin-bottom: 5px;
+        padding-bottom: 0;
+    }
+    .feature-item {
+        padding: 2px 0;
+        margin-bottom: 2px;
+    }
+    .feature-item i {
+        font-size: 0.85rem;
+        margin-right: 2px;
+    }
+    .feature-item span {
+        font-size: 0.95rem;
+    }
+    .service-price {
+        padding: 1px 0;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .price-tag {
+        font-size: 1.2rem;
+    }
+    .price-note {
+        font-size: 0.8rem;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .service-action {
+        flex-direction: row;
+        gap: 1px;
+        padding-top: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    .btn-service {
+        padding: 4px 6px;
+        font-size: 0.95rem;
+    }
+    /* Стили для раздела "Отзывы" */
+    .btn-primary {
+        font-size: 0.95rem;
+    }
+    .btn-outline-primary {
+        font-size: 0.95rem;
+    }
+    /* Стили для блока contact-info-content на узких мобильных устройствах */
+    .contact-info-content {
+        padding: 18px;
+    }
+    .contact-info-content h3 {
+        font-size: 1.15rem;
+        margin-bottom: 9px;
+        padding-bottom: 7px;
+    }
+    .contact-info-text {
+        font-size: 0.9rem;
+        line-height: 1.35;
+        margin-bottom: 16px;
+    }
+    /* Прелоадер для узких мобильных устройств */
+    .preloader-glass {
+        width: 95px;
+        height: 135px;
+    }
+    .preloader-logo {
+        width: 140px;
+        height: 140px;
     }
 }
 
@@ -188,8 +765,8 @@
     }
     /* Главный экран */
     .hero {
-        padding: 105px 0 30px;
-        min-height: 90vh;
+        padding: 110px 0 75px;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -200,21 +777,267 @@
     }
     .hero__title .highlight-text {
         font-size: 2.7rem;
+        margin-bottom: 10px;
     }
     .hero__title {
         font-size: 3.0rem;
-        margin-bottom: -10px;
+        margin-bottom: 10px;
+    }
+    .hero__subtitle {
+        margin-bottom: 150px;
     }
     .hero__title .location-text {
         font-size: 1.5rem;
     }
     /* Волны */
     .wave-separator {
-        margin-top: 15px;
+        margin-top: -15px;
     }
     .wave-separator .wave-animation {
         height: 36px;
-        margin-top: -13px;
+        margin-top: -10px;
+    }
+    /* О компании */
+    /* Преимущества и предложения */
+    .section-heading {
+        margin-bottom: 10px;
+    }
+    .section-heading h2 {
+        font-size: 2.5rem;
+    }
+    .section-heading p {
+        font-size: 1.0rem;
+        font-family: 'Roboto', sans-serif;
+    }
+    .about-card {
+        padding: 15px 9px;
+        margin-bottom: 17px;
+        position: relative;
+        overflow: hidden;
+    }
+    .about-card.advantages-card {
+        padding: 13px 7px;
+    }
+    .about-card.advantages-card .advantages-grid {
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        max-height: 105px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+    }
+    .about-card.advantages-card .advantages-grid::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 26px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+    }
+    .about-card.advantages-card .advantages-grid.expanded {
+        max-height: 500px;
+    }
+    .about-card.advantages-card .advantages-grid.expanded::after {
+        display: none;
+    }
+    .about-card.advantages-card .advantage-item {
+        padding: 8px 5px;
+        margin-bottom: 7px;
+    }
+    .about-card.advantages-card .advantage-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 0.82rem;
+        margin-bottom: 4px;
+    }
+    .about-card.advantages-card h4 {
+        font-size: 0.87rem;
+        margin-bottom: 3px;
+    }
+    .about-card.advantages-card p {
+        font-size: 0.77rem;
+        line-height: 1.22;
+    }
+    .card-header {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .card-header::after {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+        font-size: 0.92rem;
+    }
+    .card-header.expanded::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    .card-header h3 {
+        font-size: 1.02rem;
+    }
+    .card-header .icon-wrap {
+        width: 31px;
+        height: 31px;
+        font-size: 0.87rem;
+    }
+    /* Стили для раздела "Мы предлагаем" */
+    .about-card.offers-card .service-list {
+        max-height: 105px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+        padding-left: 26px;
+    }
+    .about-card.offers-card .service-list::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 26px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+        pointer-events: none;
+    }
+    .about-card.offers-card .service-list.expanded {
+        max-height: 500px;
+    }
+    .about-card.offers-card .service-list.expanded::after {
+        display: none;
+    }
+    .about-card.offers-card .service-list li {
+        padding: 4px 0;
+        font-size: 0.82rem;
+        margin-bottom: 4px;
+    }
+    .about-card.offers-card .service-list i {
+        font-size: 0.77rem;
+        margin-right: 7px;
+    }
+    .about-card.offers-card .service-list span {
+        font-size: 0.82rem;
+        line-height: 1.22;
+    }
+    /* Адаптивные стили для карточек услуг */
+    .service-card {
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+    .service-content {
+        padding: 8px 6px;
+    }
+    .service-description {
+        display: none;
+        /* Скрываем описание на мобильных устройствах */
+    }
+    .service-title {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+        padding-bottom: 4px;
+    }
+    .service-features {
+        margin-top: 0;
+        margin-bottom: 4px;
+        padding-bottom: 0;
+    }
+    .feature-item {
+        padding: 2px 0;
+        margin-bottom: 1px;
+    }
+    .feature-item i {
+        font-size: 0.9rem;
+        margin-right: 2px;
+    }
+    .feature-item span {
+        font-size: 0.9rem;
+    }
+    .service-price {
+        padding: 2px 0;
+        margin-bottom: 4px;
+    }
+    .price-tag {
+        font-size: 1.2rem;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .price-note {
+        font-size: 0.8rem;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .service-action {
+        flex-direction: row;
+        gap: 4px;
+        padding-top: 2px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .btn-service {
+        padding: 3px 5px;
+        font-size: 0.8rem;
+    }
+    /* Стили для блока contact-info-content на специальных Android устройствах */
+    .contact-info-content {
+        padding: 15px;
+    }
+    .contact-info-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+    .contact-info-text {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+    }
+    /* Прелоадер для специальных Android устройств */
+    .preloader-glass {
+        width: 90px;
+        height: 130px;
+    }
+    .preloader-logo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 389px) {
+    /* Стили для очень узких устройств (iPhone SE, старые смартфоны) */
+    .contact-info-content {
+        padding: 12px;
+    }
+    .contact-info-content h3 {
+        font-size: 1rem;
+        margin-bottom: 7px;
+        padding-bottom: 5px;
+    }
+    .contact-info-text {
+        font-size: 0.8rem;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+    /* Прелоадер для очень узких устройств */
+    .preloader-glass {
+        width: 80px;
+        height: 120px;
+    }
+    .preloader-logo {
+        width: 110px;
+        height: 110px;
+    }
+    .preloader-text {
+        font-size: 14px;
+    }
+    .preloader-progress {
+        width: 140px;
     }
 }
 

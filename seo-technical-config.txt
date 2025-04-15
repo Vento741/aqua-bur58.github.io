@@ -1,0 +1,543 @@
+# ТЕХНИЧЕСКИЕ ФАЙЛЫ ДЛЯ SEO-ОПТИМИЗАЦИИ
+
+## 1. ОПТИМИЗАЦИЯ ROBOTS.TXT
+
+### 1.1. Текущий robots.txt
+```
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+
+Sitemap: https://аква-бур58.рф/sitemap.xml
+
+Host: аква-бур58.рф 
+```
+
+### 1.2. Оптимизированный robots.txt
+```
+# Общие правила для всех роботов
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+Disallow: /images/favicon/
+
+# Специальные правила для Яндекс
+User-agent: Yandex
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+Disallow: /images/favicon/
+Host: аква-бур58.рф
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+# Специальные правила для Google
+User-agent: Googlebot
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+Disallow: /images/favicon/
+
+# Правила для изображений и медиа
+User-agent: Googlebot-Image
+Allow: /images/
+Disallow: /images/favicon/
+
+User-agent: YandexImages
+Allow: /images/
+Disallow: /images/favicon/
+
+# Указываем путь к XML-карте сайта
+Sitemap: https://аква-бур58.рф/sitemap.xml
+
+# Указываем основное зеркало
+Host: аква-бур58.рф
+```
+
+### 1.3. Пояснения к изменениям
+1. **Добавлены специфические правила для поисковых систем**
+   - Отдельные директивы для Яндекса и Google позволяют точнее настраивать поведение роботов каждой поисковой системы.
+
+2. **Добавлена директива Clean-param для Яндекса**
+   - Помогает избежать индексации дублированного контента с разными UTM-метками.
+
+3. **Добавлены правила для роботов изображений**
+   - Разрешает индексировать все изображения на сайте, кроме служебных.
+
+4. **Добавлены комментарии**
+   - Делает файл более понятным для будущих редактирований.
+
+5. **Запрет на сканирование /images/favicon/**
+   - Предотвращает бесполезное сканирование директории с иконками.
+
+## 2. ОПТИМИЗАЦИЯ .HTACCESS
+
+### 2.1. Текущий .htaccess
+```
+# Минимальный вариант настройки .htaccess
+RewriteEngine On
+
+# Только перенаправление index.html на корень
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Настройка кеширования статических файлов
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Изображения
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Шрифты
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType font/opentype "access plus 1 year"
+</IfModule>
+
+# Сжатие gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Установка дефолтной страницы 404
+ErrorDocument 404 /404.html
+```
+
+### 2.2. Оптимизированный .htaccess
+```
+# Включаем движок преобразования
+RewriteEngine On
+
+# Основные редиректы для SEO
+# Редирект с www на без www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Редирект с HTTP на HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Редирект index.html на корень
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Удаление слешей в конце URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Избавление от дублей с разными UTM-метками
+RewriteCond %{QUERY_STRING} ^utm_source=.* [OR]
+RewriteCond %{QUERY_STRING} ^utm_medium=.* [OR]
+RewriteCond %{QUERY_STRING} ^utm_campaign=.* [OR]
+RewriteCond %{QUERY_STRING} ^utm_content=.* [OR]
+RewriteCond %{QUERY_STRING} ^utm_term=.*
+RewriteCond %{REQUEST_URI} !^/index\.php
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
+# Настройка кеширования статических файлов
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Установка дефолтного времени кеширования
+  ExpiresDefault "access plus 1 week"
+  
+  # HTML документы
+  ExpiresByType text/html "access plus 1 day"
+  
+  # Данные
+  ExpiresByType text/xml "access plus 1 day"
+  ExpiresByType application/xml "access plus 1 day"
+  ExpiresByType application/json "access plus 1 day"
+  
+  # Изображения
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+  
+  # Шрифты
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType font/opentype "access plus 1 year"
+  ExpiresByType font/eot "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+</IfModule>
+
+# Добавляем заголовки кеширования для всех статических файлов
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|webp|gif|js|css|swf|svg|woff|woff2|ttf|eot)$">
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# HTML, XML и другие текстовые файлы
+<FilesMatch "\.(html|htm|xml|txt|json)$">
+  Header set Cache-Control "max-age=86400, public, must-revalidate"
+</FilesMatch>
+
+# Сжатие gzip для всех типов файлов
+<IfModule mod_deflate.c>
+  # Включить сжатие для всех типов вывода
+  SetOutputFilter DEFLATE
+  
+  # Исключить устаревшие браузеры
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  
+  # Не сжимать изображения, видео и архивы (они уже сжаты)
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|rar|zip|pdf|gz)$ no-gzip dont-vary
+  
+  # Сжатие различных типов файлов
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/atom_xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/ld+json
+  AddOutputFilterByType DEFLATE application/schema+json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/font-woff
+  AddOutputFilterByType DEFLATE application/font-woff2
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/eot
+  AddOutputFilterByType DEFLATE font/otf
+</IfModule>
+
+# Настройка заголовков для корректной работы с кириллическими доменами
+<IfModule mod_headers.c>
+  # Запрет кеширования для HTML файлов (чтобы не было проблем с обновлением контента)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=0, private, no-store, no-cache, must-revalidate"
+  </FilesMatch>
+  
+  # Установка Content-Type для корректного отображения кириллицы
+  AddDefaultCharset UTF-8
+  
+  # Отключение ETag для уменьшения нагрузки на сервер
+  Header unset ETag
+  FileETag None
+</IfModule>
+
+# Защита от хотлинкинга изображений
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?аква-бур58\.рф [NC]
+RewriteCond %{HTTP_REFERER} !^https?://localhost [NC]
+RewriteCond %{HTTP_REFERER} !^https?://127\.0\.0\.1 [NC]
+RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp)$ [NC]
+RewriteRule .* - [F]
+
+# Установка дефолтной страницы 404
+ErrorDocument 404 /404.html
+
+# Отключение отображения списка файлов в директориях
+Options -Indexes
+
+# Запрет доступа к скрытым файлам и директориям
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Запрет доступа к конфигурационным файлам
+<FilesMatch "^(composer\.json|package\.json|package-lock\.json|webpack\.config\.js|gulpfile\.js|README\.md)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+```
+
+### 2.3. Пояснения к изменениям
+1. **Добавлены основные SEO-редиректы**
+   - Перенаправление с www на без www
+   - Перенаправление с HTTP на HTTPS
+   - Убирание слешей в конце URL
+
+2. **Улучшена настройка кеширования**
+   - Добавлены дополнительные типы файлов
+   - Установлены различные сроки кеширования для разных типов контента
+   - Добавлены HTTP-заголовки Cache-Control
+
+3. **Улучшена настройка сжатия**
+   - Расширен список типов сжимаемых файлов
+   - Добавлены исключения для уже сжатого контента
+   - Оптимизированы правила для различных браузеров
+
+4. **Добавлена защита от хотлинкинга**
+   - Предотвращает использование ваших изображений на других сайтах
+
+5. **Повышение безопасности**
+   - Отключение отображения списка файлов в директориях
+   - Запрет доступа к скрытым файлам и конфигурациям
+
+6. **Отключение ETag**
+   - Улучшает производительность и уменьшает размер HTTP-заголовков
+
+## 3. ОПТИМИЗАЦИЯ SITEMAP.XML
+
+### 3.1. Текущий sitemap.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://аква-бур58.рф/</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/services/abyssinskaya.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/services/portable.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/services/equipment.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/services/maintenance.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/services/consultation.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/services/turnkey.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/terms.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://аква-бур58.рф/privacy-policy.html</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset> 
+```
+
+### 3.2. Оптимизированный sitemap.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Главная страница -->
+  <url>
+    <loc>https://аква-бур58.рф/</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/logo.svg</image:loc>
+      <image:title>Аква-Бур58 - Бурение скважин в Пензе</image:title>
+      <image:caption>Логотип компании по бурению скважин в Пензе</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/hero-bg.jpg</image:loc>
+      <image:title>Бурение скважин на воду в Пензе</image:title>
+      <image:caption>Профессиональное оборудование для бурения скважин</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Страницы услуг -->
+  <url>
+    <loc>https://аква-бур58.рф/services/abyssinskaya.html</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/abyssinskaya-main.jpg</image:loc>
+      <image:title>Абиссинская скважина в Пензе</image:title>
+      <image:caption>Бурение абиссинской скважины в Пензенской области</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://аква-бур58.рф/services/portable.html</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/portable-main.jpg</image:loc>
+      <image:title>Бурение переносными установками в Пензе</image:title>
+      <image:caption>Мобильная установка для бурения в труднодоступных местах</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://аква-бур58.рф/services/equipment.html</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/equipment-main.jpg</image:loc>
+      <image:title>Водоподъемное оборудование для скважин в Пензе</image:title>
+      <image:caption>Насосное оборудование для водоснабжения частного дома</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://аква-бур58.рф/services/maintenance.html</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/maintenance-main.jpg</image:loc>
+      <image:title>Обслуживание и ремонт скважин в Пензе</image:title>
+      <image:caption>Профессиональное обслуживание скважин на воду</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://аква-бур58.рф/services/consultation.html</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/consultation-main.jpg</image:loc>
+      <image:title>Консультации по водоснабжению в Пензе</image:title>
+      <image:caption>Анализ воды и консультации специалистов</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://аква-бур58.рф/services/turnkey.html</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/turnkey-main.jpg</image:loc>
+      <image:title>Скважина под ключ в Пензе</image:title>
+      <image:caption>Комплексное решение для водоснабжения дома</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Правовые страницы -->
+  <url>
+    <loc>https://аква-бур58.рф/terms.html</loc>
+    <lastmod>2023-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://аква-бур58.рф/privacy-policy.html</loc>
+    <lastmod>2023-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Страница 404 -->
+  <url>
+    <loc>https://аква-бур58.рф/404.html</loc>
+    <lastmod>2023-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+</urlset>
+```
+
+### 3.3. Пояснения к изменениям
+1. **Добавлены пространства имен**
+   - Добавлено пространство имен image для включения информации об изображениях
+   - Добавлено пространство имен xhtml для будущего добавления альтернативных языковых версий
+
+2. **Обновлены даты последнего изменения**
+   - Установлены более реалистичные даты (не будущие)
+   - Разные даты для разных типов страниц
+
+3. **Добавлены изображения**
+   - Для каждой страницы добавлены основные изображения
+   - Включены заголовки и описания изображений для лучшего индексирования
+
+4. **Логическое структурирование**
+   - Добавлены комментарии для разделения групп страниц
+   - Добавлена страница 404 с низким приоритетом
+
+5. **Детальные описания изображений**
+   - Для каждого изображения добавлены атрибуты title и caption
+   - Описания включают ключевые слова и предоставляют контекст
+
+## 4. РЕКОМЕНДАЦИИ ПО ВНЕДРЕНИЮ ИЗМЕНЕНИЙ
+
+1. **Последовательность действий:**
+   - Сначала внедрите изменения в robots.txt
+   - Затем обновите .htaccess
+   - В последнюю очередь обновите sitemap.xml
+
+2. **Мониторинг после внедрения:**
+   - Проверяйте лог-файлы сервера на наличие ошибок 500
+   - Отслеживайте изменения в индексации через Яндекс.Вебмастер и Google Search Console
+   - Контролируйте влияние на скорость загрузки через инструменты анализа производительности
+
+3. **Тестирование:**
+   - Перед внедрением тестируйте изменения .htaccess на тестовом сервере
+   - Проверяйте валидность sitemap.xml через онлайн-инструменты
+   - Тестируйте редиректы на различных устройствах и браузерах 

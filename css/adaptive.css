@@ -588,3 +588,46 @@
         font-size: 0.85rem;
     }
 }
+
+
+/* Улучшение стилей CTA для различных размеров экранов */
+
+@media screen and (max-width: 767px) {
+    .service-bottom-cta {
+        background: linear-gradient(80deg, #0082d0, #00c3ff);
+    }
+    .service-bottom-cta .row {
+        display: flex;
+        flex-direction: column;
+    }
+    .service-bottom-cta .col-lg-8,
+    .service-bottom-cta .col-lg-4 {
+        width: 100%;
+        text-align: center;
+    }
+    .service-bottom-cta .btn-light-outline {
+        margin-top: 20px;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-bottom-cta {
+        padding: 25px 0;
+    }
+    .service-bottom-cta .cta-wrapper {
+        padding: 0 10px;
+    }
+    .service-bottom-cta h2 {
+        font-size: 1.4rem;
+    }
+    .service-bottom-cta p {
+        font-size: 0.95rem;
+        opacity: 0.95;
+    }
+    .service-bottom-cta .btn-light-outline {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

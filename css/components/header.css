@@ -237,6 +237,9 @@
     background-color: rgba(0, 153, 204, 0.25);
 }
 
+
+/* Стили для кнопки меню */
+
 .header.scrolled .navbar-toggler {
     padding: 4px 7px;
     font-size: 1.2rem;
@@ -601,13 +604,13 @@
 
 .header .navbar-toggler {
     border: none;
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: var(--white);
     outline: none;
     transition: all 0.3s ease;
     margin-left: 15px;
     background-color: hsla(202, 78%, 48%, 0.897);
-    padding: 5px 8px;
+    padding: 4px 6px;
     border-radius: 5px;
     z-index: 1100;
     position: relative;
@@ -641,6 +644,19 @@
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+
+/* Стиль для тела когда меню открыто */
+
+body.menu-open {
+    overflow: hidden;
+}
+
+body.menu-open .header .navbar-collapse.show {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 @media (max-width: 991px) {
     .header .navbar {
         position: relative;
@@ -657,12 +673,29 @@
         padding: 20px;
         border-radius: 0 0 15px 15px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        max-height: 400px;
+        max-height: 85vh;
         overflow-y: auto;
         z-index: 1040;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 250px;
+    }
+    body.menu-open .header .navbar-collapse {
+        height: auto !important;
+        display: flex !important;
+    }
+    .header .navbar-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
     }
     .header .nav-item {
         margin: 8px 0;
+        display: flex;
+        flex-direction: column;
     }
     .header .nav-link.buoy-link {
         border-radius: 12px;
@@ -674,6 +707,10 @@
         transition: all 0.3s ease;
         font-size: 16px;
         border: 1px solid rgba(255, 255, 255, 0.4);
+        height: auto;
+        min-height: 42px;
+        width: 100%;
+        margin-bottom: 3px;
     }
     .header .nav-link.buoy-link:hover {
         transform: translateY(0) scale(1.03);

@@ -1,3 +1,4 @@
+# Общие правила для всех роботов
 User-agent: *
 Allow: /
 Disallow: /css/
@@ -5,7 +6,41 @@ Disallow: /js/
 Disallow: /.git/
 Disallow: /.vscode/
 Disallow: /.cursor/
+Disallow: /images/favicon/
 
+# Специальные правила для Яндекс
+User-agent: Yandex
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+Disallow: /images/favicon/
+Host: аква-бур58.рф
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+# Специальные правила для Google
+User-agent: Googlebot
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+Disallow: /images/favicon/
+
+# Правила для изображений и медиа
+User-agent: Googlebot-Image
+Allow: /images/
+Disallow: /images/favicon/
+
+User-agent: YandexImages
+Allow: /images/
+Disallow: /images/favicon/
+
+# Указываем путь к XML-карте сайта
 Sitemap: https://аква-бур58.рф/sitemap.xml
 
+# Указываем основное зеркало
 Host: аква-бур58.рф 

@@ -1,0 +1,292 @@
+# БЫСТРЫЕ SEO-ИСПРАВЛЕНИЯ ДЛЯ САЙТА АКВА-БУР58
+
+## 1. ПЕРВООЧЕРЕДНЫЕ ТЕХНИЧЕСКИЕ ПРАВКИ
+
+### 1.1. Мета-теги
+- **Изменить meta-description на главной странице:**
+```html
+<meta name="description" content="Бурение скважин на воду в Пензе и области под ключ. Артезианские и абиссинские скважины с гарантией. Сервисное обслуживание, ремонт и обустройство скважин. Звоните: +7 (8412) 24-15-89">
+```
+
+- **Обновить title главной страницы:**
+```html
+<title>Бурение скважин на воду в Пензе и области | Аква-Бур58</title>
+```
+
+- **Добавить атрибут alt ко всем изображениям**, например:
+```html
+<img src="images/serv-port4.jpg" alt="Консультации и анализ качества воды в Пензе от компании Аква-Бур58" class="service-detail-image">
+```
+
+### 1.2. Микроразметка Schema.org
+- **Добавить на главную страницу базовую микроразметку LocalBusiness:**
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Аква-Бур58",
+  "image": "https://аква-бур58.рф/images/logo.svg",
+  "url": "https://аква-бур58.рф/",
+  "telephone": "+78412241589",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Ваша Улица, 123",
+    "addressLocality": "Пенза",
+    "postalCode": "440000",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.2007, // Заменить на точные координаты
+    "longitude": 45.0046 // Заменить на точные координаты
+  },
+  "priceRange": "₽₽",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://vk.com/ваша_страница",
+    "https://youtube.com/ваш_канал"
+  ]
+}
+</script>
+```
+
+- **Добавить микроразметку для FAQ на главной странице:**
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько стоит пробурить скважину?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стоимость бурения скважины зависит от нескольких факторов: тип скважины (абиссинская или артезианская), глубина бурения, геологические особенности участка. В среднем цена начинается от 3000 рублей за метр."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какую скважину лучше выбрать для частного дома?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для частного дома подойдут и абиссинская, и артезианская скважины. Выбор зависит от потребностей в объеме воды, особенностей почвы и бюджета. Абиссинская скважина дешевле, но подходит только при близком залегании водоносных слоев. Артезианская обеспечивает больший дебит и служит дольше."
+      }
+    }
+    // Добавить все остальные FAQ с вашего сайта
+  ]
+}
+</script>
+```
+
+### 1.3. Оптимизация robots.txt
+```
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+
+User-agent: Yandex
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+Host: аква-бур58.рф
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+User-agent: Googlebot
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.cursor/
+
+Sitemap: https://аква-бур58.рф/sitemap.xml
+```
+
+### 1.4. Улучшение sitemap.xml
+- Добавить изображения в sitemap:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://аква-бур58.рф/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://аква-бур58.рф/images/logo.svg</image:loc>
+      <image:title>Логотип Аква-Бур58</image:title>
+    </image:image>
+  </url>
+  <!-- Аналогично для других страниц -->
+</urlset>
+```
+
+## 2. ОПТИМИЗАЦИЯ КОНТЕНТА
+
+### 2.1. Оптимизация заголовков
+- **Пример для страницы услуги "Абиссинская скважина":**
+```html
+<h1 class="service-detail-title">Бурение абиссинских скважин в Пензе и области</h1>
+<div class="service-detail-subtitle">Доступное водоснабжение для частного дома с гарантией качества от профессионалов</div>
+```
+
+### 2.2. Внутренняя перелинковка
+- **Добавить блок "Другие услуги" в конце каждой страницы услуг:**
+```html
+<div class="related-services">
+    <h3>Другие услуги по водоснабжению</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="../services/abyssinskaya.html" class="related-service-card">
+                <img src="../images/abyssinskaya-thumb.jpg" alt="Абиссинская скважина в Пензе">
+                <h4>Абиссинская скважина</h4>
+                <p>Надежное водоснабжение по доступной цене</p>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="../services/turnkey.html" class="related-service-card">
+                <img src="../images/turnkey-thumb.jpg" alt="Скважина под ключ в Пензе">
+                <h4>Скважина под ключ</h4>
+                <p>Полный комплекс работ с гарантией</p>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="../services/maintenance.html" class="related-service-card">
+                <img src="../images/maintenance-thumb.jpg" alt="Обслуживание скважин в Пензе">
+                <h4>Обслуживание скважин</h4>
+                <p>Профилактика и ремонт любой сложности</p>
+            </a>
+        </div>
+    </div>
+</div>
+```
+
+### 2.3. Улучшение текстов
+- **Добавить региональные маркеры в тексты:**
+  - Использовать названия районов Пензенской области
+  - Указывать конкретные населенные пункты, где проводились работы
+  - Упоминать особенности геологии и водоносных слоев Пензенской области
+
+- **Расширить описания услуг, добавив:**
+  - Больше технических деталей
+  - Информацию о применяемых материалах
+  - Сравнение с другими методами
+  - Примеры успешных проектов
+
+## 3. УСКОРЕНИЕ ЗАГРУЗКИ
+
+### 3.1. Оптимизация изображений
+- Конвертировать все изображения в WebP
+- Добавить атрибуты width и height всем изображениям
+- Внедрить lazy loading для изображений:
+```html
+<img src="../images/serv-port4.jpg" alt="Консультации по водоснабжению" width="800" height="600" loading="lazy" class="service-detail-image">
+```
+
+### 3.2. Оптимизация .htaccess
+```apache
+# Редирект c www на без www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Редирект с HTTP на HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Сжатие всех текстовых файлов
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml
+</IfModule>
+
+# Кеширование файлов
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+  ExpiresByType application/x-shockwave-flash "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+```
+
+## 4. ЛОКАЛЬНЫЙ SEO
+
+### 4.1. Создание отдельных целевых страниц
+- **Создать страницы для основных районов:**
+  - Бурение скважин в Пензенском районе
+  - Бурение скважин в Бессоновском районе
+  - Бурение скважин в Мокшанском районе
+  - И т.д. для других важных районов
+
+- **Каждая страница должна содержать:**
+  - Уникальный заголовок и мета-теги
+  - Описание особенностей водоснабжения в этом районе
+  - Примеры выполненных работ в этом районе
+  - Отзывы клиентов из этого района
+
+### 4.2. Яндекс.Справочник
+- Создать и заполнить профиль компании со всеми данными:
+  - Точный адрес
+  - Часы работы
+  - Фотографии офиса и работ
+  - Полный список услуг
+  - Ссылки на соцсети
+
+## 5. АНАЛИТИКА
+
+### 5.1. Установка счетчика Яндекс.Метрики
+```html
+<!-- Вставить в head всех страниц -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(XXXXXXXX, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+```
+
+### 5.2. Настройка событий в Яндекс.Метрике
+- Отслеживать клики по телефону
+- Отслеживать отправку форм обратной связи
+- Отслеживать клики по мессенджерам 

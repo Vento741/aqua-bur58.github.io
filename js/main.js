@@ -108,6 +108,7 @@ function initMobileMenu() {
         } else {
             menuToggle.style.display = 'none';
             document.body.classList.remove('burger-active');
+            document.body.classList.remove('menu-open');
 
             // Обеспечиваем видимость меню на больших экранах
             if (window.innerWidth >= 1300) {
@@ -134,6 +135,14 @@ function initMobileMenu() {
 
             // Также добавляем специальный класс для дополнительных стилей
             document.body.classList.add('narrow-device');
+
+            // Убеждаемся, что мобильное меню имеет правильные свойства
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.style.display = 'flex';
+                mobileMenu.style.flexDirection = 'column';
+                mobileMenu.style.visibility = 'visible';
+                mobileMenu.style.opacity = '1';
+            }
         } else {
             // Сбрасываем inline-стили для нормальных экранов
             if (window.innerWidth > 320) {
@@ -156,7 +165,10 @@ function initMobileMenu() {
         if (window.innerWidth <= 320) {
             if (mobileMenu.classList.contains('show')) {
                 // Меню открыто
-                mobileMenu.style.display = 'block';
+                mobileMenu.style.display = 'flex';
+                mobileMenu.style.flexDirection = 'column';
+                mobileMenu.style.visibility = 'visible';
+                mobileMenu.style.opacity = '1';
             } else {
                 // Таймаут для анимации
                 setTimeout(() => {
@@ -174,6 +186,10 @@ function initMobileMenu() {
         link.addEventListener('click', () => {
             if (mobileMenu.classList.contains('show')) {
                 menuToggle.click();
+                // Сбрасываем состояние после закрытия меню
+                setTimeout(() => {
+                    document.body.classList.remove('menu-open');
+                }, 300);
             }
         });
     });
@@ -260,21 +276,125 @@ function initBackToTop() {
 }
 
 /**
- * Инициализация прелоадера
+ * Инициализация прелоадера, который должен показываться минимум 2.4 секунды
  */
 function initPreloader() {
     const preloader = document.querySelector('.preloader');
 
-    if (preloader) {
-        // Скрываем прелоадер после загрузки страницы
-        window.addEventListener('load', () => {
+    if (!preloader) return;
+
+    // Сохраняем время начала загрузки
+    const startTime = Date.now();
+
+    // Проверяем, находимся ли мы на главной странице или на странице услуг
+    const isMainPage = window.location.pathname === '/' ||
+        window.location.pathname === '/index.html' ||
+        window.location.pathname.endsWith('/index.html');
+
+    // Минимальное время показа прелоадера - 2.4 секунды для главной страницы, 2 секунды для остальных
+    const minPreloaderTime = isMainPage ? 2400 : 2000;
+
+    // Создаем элементы прелоадера, если они отсутствуют
+    if (!preloader.querySelector('.preloader-glass')) {
+        // Создаем HTML структуру прелоадера
+        preloader.innerHTML = `
+            <div class="preloader-glass">
+                <div class="preloader-water"></div>
+                <div class="preloader-logo"></div>
+                <div class="preloader-bubbles">
+                    <div class="preloader-bubble"></div>
+                    <div class="preloader-bubble"></div>
+                    <div class="preloader-bubble"></div>
+                    <div class="preloader-bubble"></div>
+                </div>
+            </div>
+            <div class="preloader-text">Загрузка чистой воды...</div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        `;
+    }
+
+    // Обработчик события при загрузке страницы
+    window.addEventListener('load', () => {
+        // Рассчитываем, сколько времени прошло с начала загрузки
+        const elapsedTime = Date.now() - startTime;
+
+        // Определяем, сколько ещё нужно ждать до минимального времени показа
+        const remainingTime = Math.max(0, minPreloaderTime - elapsedTime);
+
+        // Адаптируем анимацию для времени показа
+        if (!isMainPage) {
+            document.documentElement.style.setProperty('--preloader-fill-time', '2s');
+            document.documentElement.style.setProperty('--preloader-progress-time', '2s');
+        }
+
+        // Запускаем таймер на оставшееся время
+        setTimeout(() => {
+            // Начинаем плавное скрытие прелоадера
             preloader.style.opacity = '0';
 
+            // Полностью скрываем прелоадер после окончания анимации
             setTimeout(() => {
                 preloader.style.display = 'none';
+                document.body.classList.add('loaded');
             }, 500);
-        });
-    }
+        }, remainingTime);
+    });
+
+    // Если страница загружается слишком долго, добавим интерактивные элементы
+    setTimeout(() => {
+        // Если прелоадер всё ещё виден после 4 секунд (главная) или 3 секунд (остальные)
+        const longLoadingTime = isMainPage ? 4000 : 3000;
+
+        setTimeout(() => {
+            if (preloader.style.display !== 'none') {
+                const text = document.querySelector('.preloader-text');
+                if (text) {
+                    text.textContent = 'Почти готово...';
+
+                    // Добавляем возможность пропустить прелоадер
+                    if (!document.querySelector('.preloader-skip')) {
+                        const skipButton = document.createElement('button');
+                        skipButton.textContent = 'Пропустить загрузку';
+                        skipButton.classList.add('preloader-skip');
+                        skipButton.style.cssText = `
+                            margin-top: 15px;
+                            padding: 8px 15px;
+                            background: transparent;
+                            border: 2px solid #0095eb;
+                            color: #0095eb;
+                            border-radius: 20px;
+                            cursor: pointer;
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 14px;
+                            transition: all 0.3s ease;
+                        `;
+
+                        skipButton.addEventListener('mouseover', () => {
+                            skipButton.style.backgroundColor = '#0095eb';
+                            skipButton.style.color = 'white';
+                        });
+
+                        skipButton.addEventListener('mouseout', () => {
+                            skipButton.style.backgroundColor = 'transparent';
+                            skipButton.style.color = '#0095eb';
+                        });
+
+                        skipButton.addEventListener('click', () => {
+                            preloader.style.opacity = '0';
+                            setTimeout(() => {
+                                preloader.style.display = 'none';
+                                document.body.classList.add('loaded');
+                            }, 300);
+                        });
+
+                        preloader.appendChild(skipButton);
+                    }
+                }
+            }
+        }, longLoadingTime);
+    }, 0);
 }
 
 /**
@@ -561,8 +681,8 @@ function initTestimonialsSlider() {
 
         track.style.transition = 'none';
 
-        document.addEventListener('touchmove', touchMove);
-        document.addEventListener('touchend', touchEnd);
+        document.addEventListener('touchmove', touchMove, { passive: true });
+        document.addEventListener('touchend', touchEnd, { passive: true });
     }
 
     function touchMove(event) {
@@ -602,7 +722,7 @@ function initTestimonialsSlider() {
     function bindEvents() {
         prevButton.addEventListener('click', prevSlide);
         nextButton.addEventListener('click', nextSlide);
-        track.addEventListener('touchstart', touchStart);
+        track.addEventListener('touchstart', touchStart, { passive: true });
 
         // Остановка автопрокрутки при наведении на слайдер      
         slider.addEventListener('mouseenter', () => {

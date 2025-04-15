@@ -66,11 +66,11 @@
 
 :root {
     /* Основные цвета сайта */
-    --primary-color: #0088cc;
+    --primary-color: #0095eb;
     --primary-dark: #006699;
     --primary-light: #37a3df;
-    --secondary-color: #00aae7;
-    --accent-color: #ff9900;
+    --secondary-color: #00c3ff;
+    --accent-color: #ffba00;
     --light-color: #e9f5fe;
     --dark-color: #1e3a52;
     --white-color: #ffffff;
@@ -81,32 +81,32 @@
     --background-light: #f2f7fc;
     --border-color: #e1ebf2;
     /* Переменные размеров шрифтов для адаптивности */
-    --fs-xxl: 3.5rem;
+    --fs-xxl: 3rem;
     /* Для крупных заголовков */
     --fs-xl: 2.5rem;
     /* Для заголовков h1 */
     --fs-lg: 2rem;
     /* Для заголовков h2 */
-    --fs-md: 1.5rem;
+    --fs-md: 1.25rem;
     /* Для заголовков h3 */
-    --fs-sm: 1.125rem;
+    --fs-sm: 1rem;
     /* Для основного текста */
     --fs-xs: 0.875rem;
     /* Для мелкого текста */
     /* Переменные отступов для адаптивности */
-    --spacing-xxl: 4rem;
-    --spacing-xl: 3rem;
+    --spacing-xxl: 3rem;
+    --spacing-xl: 2.5rem;
     --spacing-lg: 2rem;
     --spacing-md: 1.5rem;
     --spacing-sm: 1rem;
     --spacing-xs: 0.5rem;
     /* Цвета */
-    --light-blue: #f5fbff;
+    --light-blue: #f0f9ff;
     --mid-blue: #e1f5ff;
-    --dark-blue: #009be9;
-    --black: #333333;
-    --gray: #808080;
-    --light-gray: #f3f5f7;
+    --dark-blue: #005b89;
+    --black: #1a1a1a;
+    --gray: #6c757d;
+    --light-gray: #f8f9fa;
     /* Тени */
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 5px 20px rgba(0, 114, 181, 0.1);
@@ -114,7 +114,7 @@
     --shadow-xl: 0 15px 60px rgba(0, 114, 181, 0.2);
     /* Шрифты */
     --font-primary: 'Montserrat', sans-serif;
-    --font-secondary: 'Ubuntu', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
     --font-text: 'Roboto', sans-serif;
     /* Радиусы */
     --radius-sm: 5px;
@@ -126,6 +126,9 @@
     --transition-fast: all 0.3s ease;
     --transition-normal: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     --transition-slow: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Переменные для прелоадера */
+    --preloader-fill-time: 2.4s;
+    --preloader-progress-time: 2.4s;
 }
 
 
@@ -303,27 +306,209 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--white);
+    background-color: #f0f7fc;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.preloader__wave {
-    width: 80px;
-    height: 80px;
+.preloader-glass {
     position: relative;
-    animation: wave 1.5s linear infinite;
+    width: 120px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(0, 149, 235, 0.8);
+    border-radius: 5px 5px 50px 50px;
+    box-shadow: 0 5px 15px rgba(0, 149, 235, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    margin-bottom: 25px;
 }
 
-@keyframes wave {
+.preloader-water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #0095eb 0%, #00c3ff 100%);
+    border-radius: 0 0 45px 45px;
+    animation: fillWater var(--preloader-fill-time) ease-in-out forwards;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.preloader-logo {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('../images/logo.svg') no-repeat center center;
+    background-size: contain;
+    z-index: 2;
+    opacity: 0;
+    animation: showLogo var(--preloader-fill-time) ease-in-out forwards;
+}
+
+.preloader-bubbles {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.preloader-bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: bubbleRise linear infinite;
+    opacity: 0;
+}
+
+.preloader-bubble:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    left: 20%;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+}
+
+.preloader-bubble:nth-child(2) {
+    width: 10px;
+    height: 10px;
+    left: 40%;
+    animation-duration: 1.8s;
+    animation-delay: 0.5s;
+}
+
+.preloader-bubble:nth-child(3) {
+    width: 6px;
+    height: 6px;
+    left: 60%;
+    animation-duration: 2.2s;
+    animation-delay: 0.1s;
+}
+
+.preloader-bubble:nth-child(4) {
+    width: 9px;
+    height: 9px;
+    left: 80%;
+    animation-duration: 2.5s;
+    animation-delay: 0.7s;
+}
+
+.preloader-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #0095eb;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInText 0.5s ease-in-out 0.8s forwards;
+    text-shadow: 0 1px 2px rgba(0, 149, 235, 0.2);
+    letter-spacing: 1px;
+}
+
+.preloader-progress {
+    width: 200px;
+    height: 4px;
+    background: rgba(0, 149, 235, 0.2);
+    border-radius: 2px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.preloader-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #0095eb, #00c3ff);
+    border-radius: 2px;
+    animation: progressBar var(--preloader-progress-time) ease-in-out forwards;
+}
+
+@keyframes fillWater {
     0% {
-        transform: rotate(0deg);
+        height: 0%;
+    }
+    20% {
+        height: 20%;
+    }
+    40% {
+        height: 35%;
+    }
+    60% {
+        height: 50%;
+    }
+    80% {
+        height: 75%;
     }
     100% {
-        transform: rotate(360deg);
+        height: 85%;
+    }
+}
+
+@keyframes showLogo {
+    0% {
+        opacity: 0.2;
+    }
+    30% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progressBar {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 30%;
+    }
+    50% {
+        width: 50%;
+    }
+    75% {
+        width: 75%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes bubbleRise {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.6;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
     }
 }
 
