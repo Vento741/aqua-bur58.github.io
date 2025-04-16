@@ -750,7 +750,7 @@
         /* Скрываем описание на мобильных устройствах */
     }
     .service-title {
-        font-size: 0.95rem;
+        font-size: 1.3rem;
         margin-bottom: 7px;
         padding-bottom: 7px;
     }
@@ -764,21 +764,21 @@
         margin-bottom: 3px;
     }
     .feature-item i {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         margin-right: 4px;
     }
     .feature-item span {
-        font-size: 0.8rem;
+        font-size: 1.0rem;
     }
     .service-price {
         padding: 4px 0;
         margin-bottom: 7px;
     }
     .price-tag {
-        font-size: 0.95rem;
+        font-size: 1.3rem;
     }
     .price-note {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
     .service-action {
         flex-direction: row;
@@ -789,7 +789,7 @@
     }
     .btn-service {
         padding: 5px 8px;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
     /* Преимущества */
     .about-card {
