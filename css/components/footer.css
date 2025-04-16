@@ -36,7 +36,7 @@
 
 .footer-description {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     line-height: 1.6;
     margin-bottom: 25px;
 }
@@ -420,22 +420,22 @@
         font-size: 1.0rem;
     }
     .footer-menu {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     .footer-contact-item {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     .footer-connect {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     .footer-newsletter h5 {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     .footer-newsletter .form-control {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     .footer-newsletter .btn {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -466,5 +466,16 @@
     }
     .footer-logo img {
         height: 80px;
+    }
+    .footer-description,
+    .footer-menu,
+    .footer-contact-item,
+    .footer-connect,
+    .footer-newsletter h5,
+    .footer-newsletter .form-control,
+    .footer-newsletter .btn,
+    .copyright p,
+    .footer-policy a {
+        font-size: 0.75rem !important;
     }
 }

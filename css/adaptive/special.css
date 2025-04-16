@@ -16,10 +16,10 @@
         /* Средне-большой размер шрифта */
         --fs-md: 1.05rem;
         /* Средний размер шрифта */
-        --fs-sm: 0.875rem;
-        /* Маленький размер шрифта */
-        --fs-xs: 0.75rem;
-        /* Очень маленький размер шрифта */
+        --fs-sm: 0.95rem;
+        /* Маленький размер шрифта - увеличен */
+        --fs-xs: 0.875rem;
+        /* Очень маленький размер шрифта - увеличен */
         --spacing-xxl: 2.2rem;
         /* Очень большой отступ */
         --spacing-xl: 1.7rem;
@@ -36,7 +36,7 @@
     /* Базовый размер шрифта для всей страницы */
     html,
     body {
-        font-size: 13.5px;
+        font-size: 14px;
     }
     /* Главный экран (Hero) - настройки для средних мобильных устройств */
     .hero {
@@ -200,15 +200,15 @@
     .about-card.advantages-card .advantage-icon {
         width: 32px;
         height: 32px;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         margin-bottom: 5px;
     }
     .about-card.advantages-card h4 {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         margin-bottom: 3px;
     }
     .about-card.advantages-card p {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         line-height: 1.25;
     }
     .card-header {
@@ -269,15 +269,15 @@
     }
     .about-card.offers-card .service-list li {
         padding: 5px 0;
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         margin-bottom: 5px;
     }
     .about-card.offers-card .service-list i {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         margin-right: 8px;
     }
     .about-card.offers-card .service-list span {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         line-height: 1.25;
     }
     /* Адаптивные стили для карточек услуг */
@@ -321,7 +321,7 @@
         font-size: 1.3rem;
     }
     .price-note {
-        font-size: 0.85rem;
+        font-size: 0.875rem;
         margin-bottom: 1px;
         margin-top: 1px;
     }
@@ -376,8 +376,8 @@
         --fs-xl: 1.7rem;
         --fs-lg: 1.35rem;
         --fs-md: 1.0rem;
-        --fs-sm: 0.85rem;
-        --fs-xs: 0.73rem;
+        --fs-sm: 0.9rem;
+        --fs-xs: 0.875rem;
         --spacing-xxl: 2.0rem;
         --spacing-xl: 1.6rem;
         --spacing-lg: 1.2rem;
@@ -387,7 +387,7 @@
     }
     html,
     body {
-        font-size: 13px;
+        font-size: 13.5px;
     }
     /* Главный экран (Hero) */
     .hero {
@@ -522,15 +522,15 @@
     .about-card.advantages-card .advantage-icon {
         width: 30px;
         height: 30px;
-        font-size: 0.8rem;
+        font-size: 0.95rem;
         margin-bottom: 4px;
     }
     .about-card.advantages-card h4 {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         margin-bottom: 3px;
     }
     .about-card.advantages-card p {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         line-height: 1.2;
     }
     .card-header {
@@ -559,7 +559,7 @@
     .card-header .icon-wrap {
         width: 30px;
         height: 30px;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
     /* Стили для раздела "Почему выбирают наши услуги" */
     .about-card.why-choose-us-card {
@@ -591,15 +591,15 @@
     }
     .about-card.offers-card .service-list li {
         padding: 4px 0;
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         margin-bottom: 4px;
     }
     .about-card.offers-card .service-list i {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         margin-right: 7px;
     }
     .about-card.offers-card .service-list span {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         line-height: 1.2;
     }
     /* Адаптивные стили для карточек услуг */
@@ -629,7 +629,7 @@
         margin-bottom: 2px;
     }
     .feature-item i {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         margin-right: 2px;
     }
     .feature-item span {
@@ -644,7 +644,7 @@
         font-size: 1.2rem;
     }
     .price-note {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         margin-bottom: 1px;
         margin-top: 1px;
     }
@@ -701,8 +701,8 @@
         --fs-xl: 1.75rem;
         --fs-lg: 1.35rem;
         --fs-md: 1.02rem;
-        --fs-sm: 0.865rem;
-        --fs-xs: 0.73rem;
+        --fs-sm: 0.9rem;
+        --fs-xs: 0.875rem;
         --spacing-xxl: 2.1rem;
         --spacing-xl: 1.65rem;
         --spacing-lg: 1.28rem;
@@ -850,15 +850,15 @@
     .about-card.advantages-card .advantage-icon {
         width: 31px;
         height: 31px;
-        font-size: 0.82rem;
+        font-size: 0.95rem;
         margin-bottom: 4px;
     }
     .about-card.advantages-card h4 {
-        font-size: 0.87rem;
+        font-size: 0.9rem;
         margin-bottom: 3px;
     }
     .about-card.advantages-card p {
-        font-size: 0.77rem;
+        font-size: 0.875rem;
         line-height: 1.22;
     }
     .card-header {
@@ -887,7 +887,7 @@
     .card-header .icon-wrap {
         width: 31px;
         height: 31px;
-        font-size: 0.87rem;
+        font-size: 0.95rem;
     }
     /* Стили для раздела "Мы предлагаем" */
     .about-card.offers-card .service-list {
@@ -915,15 +915,15 @@
     }
     .about-card.offers-card .service-list li {
         padding: 4px 0;
-        font-size: 0.82rem;
+        font-size: 0.875rem;
         margin-bottom: 4px;
     }
     .about-card.offers-card .service-list i {
-        font-size: 0.77rem;
+        font-size: 0.875rem;
         margin-right: 7px;
     }
     .about-card.offers-card .service-list span {
-        font-size: 0.82rem;
+        font-size: 0.875rem;
         line-height: 1.22;
     }
     /* Адаптивные стили для карточек услуг */
@@ -957,7 +957,7 @@
         margin-right: 2px;
     }
     .feature-item span {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     .service-price {
         padding: 2px 0;
@@ -969,7 +969,7 @@
         margin-top: 1px;
     }
     .price-note {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         margin-bottom: 1px;
         margin-top: 1px;
     }
@@ -982,7 +982,7 @@
     }
     .btn-service {
         padding: 3px 5px;
-        font-size: 0.8rem;
+        font-size: 0.875rem;
     }
     /* Стили для блока contact-info-content на специальных Android устройствах */
     .contact-info-content {
@@ -1020,7 +1020,7 @@
         padding-bottom: 5px;
     }
     .contact-info-text {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         line-height: 1.25;
         margin-bottom: 12px;
     }
@@ -1175,6 +1175,6 @@
         bottom: 20px;
         right: 20px;
         padding: 10px 15px;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
