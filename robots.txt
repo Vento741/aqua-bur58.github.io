@@ -31,4 +31,7 @@ Allow: /images/
 Disallow: /images/favicon/
 
 # Указываем путь к XML-карте сайта
-Sitemap: https://аква-бур58.рф/sitemap.xml 
+Sitemap: https://аква-бур58.рф/sitemap.xml
+
+# Указание RSS-фида для агрегаторов
+Sitemap: https://аква-бур58.рф/rss.xml 
