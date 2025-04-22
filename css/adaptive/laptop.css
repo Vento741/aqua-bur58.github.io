@@ -3,60 +3,177 @@
    ====================================== */
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    /* Переменные размеров */
+     :root {
+        --fs-xxl: 2.2rem;
+        --fs-xl: 1.8rem;
+        --fs-lg: 1.4rem;
+        --fs-md: 1.1rem;
+        --fs-sm: 0.9rem;
+        --fs-xs: 0.7rem;
+        --spacing-xxl: 2.2rem;
+        --spacing-xl: 1.8rem;
+        --spacing-lg: 1.35rem;
+        --spacing-md: 0.9rem;
+        --spacing-sm: 0.7rem;
+        --spacing-xs: 0.35rem;
+    }
     /* Контейнер */
     .container {
-        max-width: 960px;
+        max-width: 720px;
+    }
+    /* Хедер */
+    .header {
+        padding: 10px 15px;
+    }
+    .header .logo {
+        height: 45px;
+        margin-top: 2px;
+    }
+    .header .navbar-brand .logo {
+        height: 60px;
+        margin-left: -30px;
+    }
+    .header.scrolled .navbar-brand .logo {
+        margin-left: -30px;
+        height: 50px;
+    }
+    .header.scrolled .logo {
+        height: 35px;
+        margin-left: 40px;
+        margin-top: 0;
+    }
+    .header .navbar-toggler {
+        font-size: 1.1rem;
+        padding: 5px 8px;
+        z-index: 1100;
+    }
+    .header.scrolled .navbar-toggler {
+        font-size: 0.9rem;
+        padding: 4px 7px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+    .header .navbar-collapse {
+        padding: 18px;
+        margin-top: 8px;
+        border-radius: 8px;
+        z-index: 1040;
     }
     /* Главный экран (Hero) */
+    .hero {
+        padding: 130px 0 100px;
+        min-height: auto;
+    }
     .hero__title {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
     }
     .hero__subtitle {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        max-width: 95%;
     }
-    .hero {
-        padding: 160px 0 130px;
+    .hero__cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .hero__messengers {
+        margin-top: 0;
+    }
+    .hero__image {
+        margin-top: 40px;
+        transform: perspective(1000px) rotateY(0);
+    }
+    /* Секции */
+    section {
+        padding: 60px 0;
     }
     /* Заголовки */
     .section-heading h2 {
-        font-size: 2.3rem;
+        font-size: 2rem;
+    }
+    .section-heading p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    /* Волны */
+    .wave-divider .wave {
+        height: 60px;
+    }
+    /* Кнопки */
+    .btn-lg {
+        padding: 10px 24px;
+        font-size: 1rem;
+        line-height: 1.5;
     }
     /* Секция о нас */
+    .about-image {
+        margin-bottom: 40px;
+    }
     .about-subtitle {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    /* Текст о компании */
+    .about-text {
+        font-size: 1rem;
+        text-align: justify;
+        hyphens: auto;
+    }
+    /* Опыт работы (бейдж) */
+    .experience-badge {
+        bottom: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    .experience-years {
+        font-size: 2rem;
+    }
+    .experience-text {
+        font-size: 0.8rem;
     }
     /* Преимущества */
+    .advantages {
+        margin-top: 30px;
+    }
+    .advantage-item {
+        padding: 20px;
+        margin-bottom: 20px;
+        min-height: 0;
+    }
     .advantage-content h4 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
-}
-
-
-/* Специальные стили для десктопов */
-
-@media (min-width: 992px) {
-    .about-content-wrapper .row {
-        margin-left: -10px;
-        margin-right: -10px;
+    .advantage-content p {
+        font-size: 0.9rem;
     }
-    .about-content-wrapper .col-lg-4 {
-        padding-left: 10px;
-        padding-right: 10px;
-        max-width: 33.33%;
-        flex: 0 0 33.33%;
+    /* Наши услуги */
+    .price-tag {
+        font-size: 1.6rem;
+        white-space: nowrap;
     }
-    /* Контейнер с увеличенной шириной для десктопов */
-    .about .container {
-        max-width: 1500px;
-        padding-left: 30px;
-        padding-right: 30px;
+    .price-note {
+        font-size: 0.875rem;
+        margin-bottom: 1px;
+        margin-top: 1px;
+        margin-left: 10px;
     }
-    /* Уменьшение вертикальных отступов секции about */
-    .about {
-        padding: 70px 0 130px;
+    /* Анимации */
+    .header .buoy-link {
+        animation-duration: 2s;
     }
-    /* Сокращение вертикального расстояния между секцией и CTA блоком */
-    .about-cta-wrapper {
-        margin-top: 30px !important;
+    .bubble {
+        opacity: 0.3;
+        animation-duration: 5s !important;
+    }
+    .bubble-5,
+    .bubble-6 {
+        display: none;
     }
 }

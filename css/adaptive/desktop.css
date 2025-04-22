@@ -58,6 +58,14 @@
     .offers-card .service-list span {
         font-size: 1.05rem;
     }
+    /* Фиксация меню на больших экранах */
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
 }
 
 
@@ -70,6 +78,10 @@
     .navbar-expand-custom .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
+        scale: 0.8;
+    }
+    .navbar-expand-custom .header__contacts {
+        scale: 0.8;
     }
     .navbar-expand-custom .navbar-toggler {
         display: none !important;
@@ -80,6 +92,11 @@
     .navbar-expand-custom .navbar-nav .nav-link {
         padding-right: .5rem;
         padding-left: .5rem;
+    }
+    /* Предотвращение переноса элементов в шапке */
+    #header>div.container>nav {
+        flex-wrap: nowrap;
+        white-space: nowrap;
     }
 }
 
@@ -116,45 +133,12 @@
         padding: 8px 15px;
         text-align: center;
     }
-}
-
-
-/* ======================================
-   ДЕСКТОПЫ (992px - 1199px)
-   ====================================== */
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    /* Увеличиваем размер текста "Бурение скважин" */
-    .hero__title .highlight-text {
-        font-size: 3.8rem;
-        text-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
-    }
-    /* Объединение текста "Профессиональное бурение скважин в Пензе и области" в одну строку */
-    .hero__subtitle .accent-text+br {
-        display: none;
-    }
-    /* Больший контейнер для секции hero */
-    .hero .container {
-        max-width: 1000px;
-    }
-    /* Предотвращаем перенос слова "области" */
-    .hero__subtitle span:last-child {
-        white-space: nowrap;
-    }
-}
-
-
-/* ======================================
-   ВСЕ ДЕСКТОПЫ (от 992px)
-   ====================================== */
-
-@media (min-width: 992px) {
-    /* Объединение текста "Профессиональное бурение скважин в Пензе и области" в одну строку */
-    .hero__subtitle .accent-text+br {
-        display: none;
-    }
-    /* Предотвращаем перенос слова "области" */
-    .hero__subtitle span:last-child {
-        white-space: nowrap;
+    /* Фиксация меню на средних экранах */
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
     }
 }
